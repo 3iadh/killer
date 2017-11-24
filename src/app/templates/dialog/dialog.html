@@ -1,0 +1,11 @@
+<h1 md-dialog-title>Dommage !</h1>
+<div md-dialog-content>
+  <p>Comment vous t'a t-il kill ? </p>
+  <md-input-container class="input">
+    <textarea mdInput tabindex="1" [(ngModel)]="killDetails"></textarea>
+  </md-input-container>
+</div>
+<div md-dialog-actions>
+  <button md-button [md-dialog-close]="killDetails" tabindex="2" (click)="newMessage(killDetails)">Valider</button>
+  <button md-button (click)="onNoClick()" tabindex="-1">Annuler</button>
+</div>

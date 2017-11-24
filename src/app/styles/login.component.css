@@ -1,0 +1,102 @@
+.connexion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carte {
+    /* background: #47597E;
+  color: white; */
+}
+
+
+/* .titre {
+  margin-bottom: 1vh;
+} */
+
+.oubli,
+.btn {
+    /* width: 12vw ;
+  font-family: faith; */
+    margin: auto;
+    margin-bottom: 3vh;
+}
+
+button {
+    border: solid 1px;
+    border-color: #142032;
+    color: black;
+    width: 12vw;
+    font-family: faith;
+}
+
+.importButton {
+    border: solid 1px;
+    border-color: #142032;
+    color: black;
+    max-width: 10vw;
+    font-family: faith;
+    font-size: 12px;
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #142032;
+    color: white;
+    border: 1px solid white;
+}
+
+button:disabled {
+    color: white;
+}
+
+.input {
+    width: 18vw;
+}
+
+md-card {
+    width: 21vw;
+    /* height: 32vh ; */
+    margin: auto;
+}
+
+.error {
+    color: #8e000c;
+    margin: auto;
+    margin-top: 3vh;
+    font-weight: bolder;
+    font-family: faith;
+}
+
+body {
+    background: #142032;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#clock {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    align-content: center;
+    width: 100px;
+    border: 1px solid #bbb;
+}
+
+#teamContainer{
+  margin-bottom: 20px;
+  font-size: 10px;
+}

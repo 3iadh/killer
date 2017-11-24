@@ -1,0 +1,45 @@
+{
+    "HEADER": {
+        "TITLE": "The hive killer"
+    },
+    "CONNEXION" :{
+        "CONNECTER" : " Se connecter",
+        "OUBLIER" : "Mot de passe oublier",
+        "EMAIL" :"Veuillez saisir votre email",
+        "PASSWORD" : "Veuillez saisir votre mot de passe",
+        "INSCRIPTION" :" Inscription"
+    },
+    "INSCRIPTION" : {
+        "SURNOM" : "Choisir un surnom de killer",
+        "MAIL" : "Saisir votre mail",
+        "PASSWORD" : "choisir un mot de passe",
+        "PASSWORD2" : "Ressaisir le mot de passe",
+        "BENCH" : "Saisir le numéro de bench",
+        "KILLER" : "Killer",
+        "KILLEUSE" : "Killeuse",
+        "SINSCRIRE" : "S'inscrire"
+    },
+    "ERROR" :{
+        "CONNEXION" : "Login ou mot de passe incorrect",
+        "PASSWORD" : "Les mots de passes sont différents",
+        "MAIL" : "Votre mail ne respecte pas la structure des mails Capgemini",
+        "VIDE" : " Veuillez renseigner tous les champs "
+    },
+    "MENU" :{
+        "DASHBORD" :"Dashboard",
+        "TIMELINE" :"Timeline & Leaderboard",
+        "PARAMETRES" : "Paramètres",
+        "DECONNEXION" : "Déconnexion"
+    },
+    "CONTRAT" : {
+        "ENCOURS" : "Contrat en cours",
+        "MISSIONANNULEE": "Mission annulée",
+        "RECUPMISSION":"va récupérer votre mission.",
+        "CONSIGNE" :"Avec détermination, on y arrive",
+        "REUSSI" :"Contrat Rempli",
+        "VALIDE" : " Mission accomplie",
+        "CONFIRMATION" : "Êtes vous sûre d'avoir tué ",
+        "ATTENTE" : "Attente de confirmation de la part de la cible",
+        "CONTRAT_TARGET":"Contrat sur votre tête"
+    }
+}

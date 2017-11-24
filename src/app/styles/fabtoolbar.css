@@ -1,0 +1,9 @@
+.toolbar-button {
+    padding: 0 14px;
+    color: red;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+    float: right;
+  }

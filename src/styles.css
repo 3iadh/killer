@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* 
+@font-face {
+  font-family: faith;
+  src: url(peugeot-regular.ttf) format("truetype");
+}  */
+
+.mat-form-field{
+  font-family: faith; 
+}
+
+html{
+    height: 100%;
+    box-sizing: border-box;
+    font-family: faith; 
+  }
+  .centrer{
+    text-align: center
+}
+
+.message{
+  width: 60vw;
+  height: 40vh;
+  margin: auto;
+  text-align: center;
+}
+.top{
+    /* width: 100% ; */
+    height: 12vh ;
+    background-color: #142032 ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.logo{
+  width: 10vw;
+  padding-left: 1vh;
+    
+}
+/* .center-bloc{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a{
+  color: white;
+  list-style: none;
+  font-family: faith, Roboto;
+  text-decoration: none;
+} */
+/* .centrer-div{
+ width: 17vw;
+ display: flex;
+ justify-content: space-between;
+ margin: 2vh auto;
+
+}
+.centrer-div button{
+  width: 7vw;
+  text-align: center;
+  background: #007edb;
+  color: white;
+} */
+
+.top, .menu, md- {
+    color: #fff ;
+}
+
+.annonce{
+      height: 5vh ;
+      background-color: #007edb ;
+      margin-bottom: 3vw;      
+}
+
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: faith, Arial, Roboto, sans-serif;
+  }
+
+  
+/* .peug{
+    float: left;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    margin-top: 7vh;
+    margin-left: 7vw;
+    color: #fff
+} */

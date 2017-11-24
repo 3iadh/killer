@@ -1,0 +1,16 @@
+
+.content{
+    float: right;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    margin-top: 4vh;
+    margin-right: 7vw;
+}
+button{
+color: #fff ;
+}
+.content #first{
+    margin-right: 4vw;
+}
+

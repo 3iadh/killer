@@ -1,0 +1,101 @@
+<!-- <psa-menu [showMenu]=isConnected></psa-menu> -->
+<killer-menu [showMenu]=isConnected></killer-menu>
+
+<md-card class="carte" *ngIf="! inscription">
+    <div class="titre">Connexion</div>
+    <div class="connexion">
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput placeholder="{{'CONNEXION.EMAIL' | translate }}" [(ngModel)]="user.useremail" (change)="reinitChamp()">
+            </md-input-container>
+        </div>
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput type="password" placeholder="{{'CONNEXION.PASSWORD' | translate }}" [(ngModel)]="user.userpassword"
+                    (change)="reinitChamp()">
+            </md-input-container>
+        </div>
+        <div class="oubli">
+            <a routerLink="/oublier" routerLinkActive="active"> {{'CONNEXION.OUBLIER' | translate }}</a>
+        </div>
+
+        <div class="btn">
+            <button md-raised-button (click)="seConnecter()">{{'CONNEXION.CONNECTER' | translate}}</button>
+        </div>
+        <div class="oubli">
+            <a routerLink="" routerLinkActive="active" (click)="goToInscription()"> {{'CONNEXION.INSCRIPTION' | translate }}</a>
+        </div>
+        <div class="error" *ngIf="error">{{'ERROR.CONNEXION'| translate}}</div>
+        <!-- <div>{{'ERROR.CONNEXION'| translate}}</div> -->
+    </div>
+</md-card>
+
+<md-card class="carte" *ngIf="inscription">
+    <div class="titre">Inscription</div>
+    <div class="connexion">
+        <br>
+        <br>
+        <div class="inp">
+            <md-radio-group [(ngModel)]="killer.sex">
+                <md-radio-button value="1">{{'INSCRIPTION.KILLER' | translate }}</md-radio-button>
+                <md-radio-button value="0">{{'INSCRIPTION.KILLEUSE' | translate }}</md-radio-button>
+            </md-radio-group>
+        </div>
+
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput placeholder="{{'INSCRIPTION.SURNOM' | translate }}" [(ngModel)]="killer.surnom">
+            </md-input-container>
+        </div>
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput placeholder="{{'INSCRIPTION.MAIL' | translate }}" [(ngModel)]="killer.email">
+            </md-input-container>
+        </div>
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput placeholder="{{'INSCRIPTION.BENCH' | translate }}" [(ngModel)]="killer.bench" maxlength="5">
+            </md-input-container>
+        </div>
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput type="password" placeholder="{{'INSCRIPTION.PASSWORD' | translate }}" [(ngModel)]="killer.password"
+                    (change)="passwordsAreDifferent()">
+            </md-input-container>
+        </div>
+        <div class="inp">
+            <md-input-container class="input">
+                <input required mdInput type="password" placeholder="{{'INSCRIPTION.PASSWORD2' | translate }}" [(ngModel)]="killer.password2"
+                    (change)="passwordsAreDifferent()">
+            </md-input-container>
+        </div>
+        <md-select placeholder="Choisissez votre équipe" id="teamContainer" [(ngModel)]="killer.team">
+            <md-option *ngFor="let team of teams" [value]="team.id" >
+                {{ team.teamname }}
+            </md-option>
+        </md-select>
+
+        <input type="file" name="file" id="file" class="inputfile" />
+        <div class="button-row">
+            <button md-raised-button id="selctImg" (click)="selectFile()" class="importButton">Sectionner une photo </button>
+            <div id='clock'></div>
+        </div>
+        <div class="btn">
+            <button md-raised-button (click)="seInscrire()">{{'INSCRIPTION.SINSCRIRE' | translate}}</button>
+        </div>
+
+        <div class="oubli">
+            <a routerLink="" routerLinkActive="active" (click)="goToConnect()"> {{'CONNEXION.CONNECTER' | translate }}</a>
+        </div>
+        <div class="error" *ngIf="errorPassword">{{'ERROR.PASSWORD'| translate}}</div>
+        <div class="error" *ngIf="errorMail">{{'ERROR.MAIL'| translate}}</div>
+        <div class="error" *ngIf="champsVide">{{'ERROR.VIDE'| translate}}</div>
+
+
+        <!-- <div>{{'ERROR.CONNEXION'| translate}}</div> -->
+    </div>
+</md-card>
+<!-- <psa-footer></psa-footer> -->
+
+<!-- Fin Menu -->
+<killer-footer></killer-footer>

@@ -1,0 +1,35 @@
+.footer{
+    /* position: absolute; */
+    background-color: #142032 ;
+    /* height: 5vh ;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6vh;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+  .footer span{
+    margin: auto;
+    /* width: 36vw; */
+    margin-top: 1vh;
+    color: white;
+    font-size: 2vh;
+    position: relative;
+    top: 0vh;
+  }
+  .footer img{
+    width: 7vw;
+    position: relative;
+    top: 1vh;
+  }

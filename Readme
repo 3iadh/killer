@@ -1,0 +1,47 @@
+## Fonctionnement de la plate forme
+
+Directus.
+
+ 1 - Base de données : La base de données, Mysql est géré par le CMS Directus. 
+     La communication de la partie Front(Angular) est donc faite à partir de l'interface API fournit par Directus.
+
+ 2- API Directus : Voir la doc de https://api.getdirectus.com/1.1/#The_Directus_API_v1.1
+    Les services (Fonctions) utilisés sont décrits
+
+ 3- Demarrage Directus : le CMS est hébergé (en local) sur un serveur Apache (les caractéristiques sont décrits dans la documentation)
+    démarrage selon la configuration du serveur Apache.
+        
+        Dans le cas présent : 
+            url : http://localhost:8012/killer/login.php
+            user : thehivekiller@capgemini.com
+            pwd : TheHiveKiller
+ 4- importer la base de données killer depuis directus (la version local)  killer.sql
+ 
+
+Angular.
+    Une fois Directus démarrer, il suiffit de lancer depuis le répertoire de travail (dossier thehivekiller):
+        - npm install (pour installer les dépendances )
+        - ng serve (pour lancer l'appli)
+
+
+
+Niveau de développement:
+
+    1 - Interface de création de compte 
+        1.1  : Upload de la photo pas intégré (il avait été décidé de le mettre que dans la partie modification de compte)
+        1.2  : Mot de passe à crypter (déterminer avec quel hash utilisé)
+    2-  Interface de connexion
+    
+    3- Génération de partie : 
+            Dans le fichier contracts.service.ts, il y a plusieurs fonctions qui gère :
+                * La création de partie de jeu 
+                * La récupération des contracts, d'un contrat spécficique ...
+
+    4- Affichage de mission (contracts.service.ts)
+        - L'affichage de la partie encours
+        - Option permettant de signaler la fin d'une mission
+
+    5 - Déconnexion
+
+Reste à faire :
+    Reste défini dans la spec
