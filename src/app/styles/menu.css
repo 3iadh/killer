@@ -6,11 +6,17 @@
     position: absolute;
     margin-top: 4vh;
     margin-right: 7vw;
+
 }
 button{
-color: #fff ;
+color: #157fb8;
 }
 .content #first{
     margin-right: 4vw;
 }
-
+.content button:last-child{
+    border:1px #157fb8 solid;
+    border-radius: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}

@@ -230,6 +230,15 @@ export class ContractService {
         });
     }
 
+    getUsersKilled(id) {
+        return client.getItems('killercontracts', {
+            'filters[killerid][eq]': id,
+            'filters[killervalidation][eq]': 1,
+            'filters[targetvalidation][eq]': 1,
+            'depth':4
+        });
+    }
+
     //Récupérer mon contrat perdu ==> Normalement je devrais en avoir qu'un par partie
     getRequestConfirmation(id) {
         return client.getItems('Contracts', {
