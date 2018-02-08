@@ -1,0 +1,12 @@
+pipeline{
+    agent any
+    stages{
+        stage('checkout stage'){
+            steps{
+                sh 'mkdir killer2'
+                sh 'cd killer2'
+                sh 'git clone git@194.3.27.74:the-hive/killer.git'
+            }
+        }
+    }
+}
