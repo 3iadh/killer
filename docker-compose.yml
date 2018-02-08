@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+    directus:
+        depends_on:
+            - mysql
+        image: getdirectus/directus:6.4
+        container_name: directus_killer
+        ports:
+            - '8012:8080'
+        environment: 
+          - MYSQL_USER=directus
+          - MYSQL_PASSWORD=directus
+          - MYSQL_ENV_MYSQL_DATABASE=directus
+          - MYSQL_PORT_3306_TCP_ADDR=mysql_killer
+          - MYSQL_PORT_3306_TCP_PORT=3306
+          - MYSQL_ENV_MYSQL_PASSWORD=directus
+          - MYSQL_ENV_MYSQL_USER=directus
+        restart: always
+        links:
+          - mysql
+        networks:
+          - network_killer
+
+    mysql:
+        build:
+            context: ./bdd_killer/
+            dockerfile: mysql.Dockerfile
+        container_name: mysql_killer
+        restart: always
+        environment:
+          - MYSQL_ROOT_PASSWORD=root
+          - MYSQL_DATABASE=directus
+          - MYSQL_USER=directus
+          - MYSQL_PASSWORD=directus
+        networks:
+          - network_killer
+
+     # Build the container using the client Dockerfile
+    node:
+      container_name: node_killer
+      restart: always
+      depends_on:
+        - directus
+      build: 
+        context: ./ihm_killer/
+        dockerfile: Dockerfile
+      ports:
+        - '4200:4200'
+      networks:
+        - network_killer
+
+networks:
+     network_killer:
+        driver: overlay
+
