@@ -1,6 +1,10 @@
+<div class="alert alert-success fade in alert-dismissable" *ngIf="inscriptionStatut">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>Killer save Success!</strong>
+      </div>
+
 <!-- <psa-menu [showMenu]=isConnected></psa-menu> -->
 <killer-menu [showMenu]=isConnected></killer-menu>
-
 <md-card class="carte" *ngIf="! inscription">
     <div class="titre">Connexion</div>
     <div class="connexion">

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -9,11 +9,11 @@ import 'rxjs/add/operator/catch';
 
 import * as apiUrls from '../config/api';
 
-declare var require: any
+declare var require: any;
 const RemoteInstance = require('directus-sdk-javascript/remote.js');
 
 const client = new RemoteInstance({
-    url: apiUrls.connexion,  //chemin vers le serveur CMS déployé 
+    url: apiUrls.connexion,  // chemin vers le serveur CMS déployé 
     accessToken: [apiUrls.acceToken] // optional, can be used without on public routes
 });
 
@@ -23,7 +23,7 @@ export class UserService {
 
     constructor(private http: HttpClient) { }
 
-    //user information 
+// user information
 
 
     killerInfo = {
@@ -31,21 +31,24 @@ export class UserService {
         firstname: '',
     };
 
-    /* @parm : login, password 
+    /* @parm : login, password
        @return : json containing user with login and password in @param if found
     */
     setUser(killer) {
 
         //découpage de l'email en nom et prenom
-        let email = killer.email; //userEmail 
+        let email = killer.email; // userEmail 
 
-        let killerFirstInformation = email.split("@"); //split to take the first party of the mail 
+        let killerFirstInformation = email.split('@'); //split to take the first party of the mail 
 
-        let userCivility = killerFirstInformation[0]; //to get the name and the first name
+        let userCivility = killerFirstInformation[0]; // to get the name and the first name
         let information = userCivility.split('.');
 
         this.killerInfo.firstname = information[0];
         this.killerInfo.lastname = information[1];
+
+
+        console.log(killer);
         return client.createItem('killers', {
 
             'killerfirstname': this.killerInfo.firstname,
@@ -57,17 +60,18 @@ export class UserService {
             'killerpassword': killer.password,
             'Killerisavailable': true,
             'teamid': killer.team,
-            'killerphoto': killer.photo,
-            'status': 1,//Par défaut un nouveau utilsateur est diponible pour jouer 
-        })
+            // 'killerphoto': killer.photo,
+            'status': 1, // Par défaut un nouveau utilsateur est diponible pour jouer
+        });
+
     }
 
-    createUserPicture(photo,name) {
+    createUserPicture(photo, name) {
         return client.createFile({
             'title': name,
-            'name':name+".png",
+            'name': name + '.png',
             'data': photo,
-            'type':'image/png'
+            'type': 'image/png'
         });
     }
 }

@@ -29,10 +29,12 @@
         "DASHBORD" :"Dashboard",
         "TIMELINE" :"Timeline & Leaderboard",
         "PARAMETRES" : "Paramètres",
-        "DECONNEXION" : "Déconnexion"
+        "DECONNEXION" : "Déconnexion",
+        "PROFIL" : "Mon Profil"
     },
     "CONTRAT" : {
         "ENCOURS" : "Contrat en cours",
+        "CONTRATABSENT" : "Pas de contrat trouvé.",
         "MISSIONANNULEE": "Mission annulée",
         "RECUPMISSION":"va récupérer votre mission.",
         "CONSIGNE" :"Avec détermination, on y arrive",
@@ -41,5 +43,19 @@
         "CONFIRMATION" : "Êtes vous sûre d'avoir tué ",
         "ATTENTE" : "Attente de confirmation de la part de la cible",
         "CONTRAT_TARGET":"Contrat sur votre tête"
+    },
+    "BOUTON" :{
+        "USERINFOUPDATE" :"Modifier mes infos",
+        "USERDELETE" :"Supprimer mon compte"
+    },
+    "PROFIL":{
+        "TITRE" :"KILLER INFO",
+        "NOM" :"Nom",
+        "PRENOM" :"Prénom",
+        "SURNOM" :"Surnom",
+        "SEXE" :"Sexe",
+        "PHOTO" :"Photo",
+        "BENCH" :"Bench",
+        "MAIL" :"E-mail"
     }
 }
