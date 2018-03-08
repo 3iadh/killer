@@ -59,8 +59,8 @@ export class UserService {
             'killerisavailable': true,
             'teamid': killer.team,
             'killerphoto': killer.photo,
-            'killerstatus': 1,  //Par défaut un nouveau utilsateur est diponible pour jouer 
-            'killerisavailable':1
+            'killerstatus': 1  //Par défaut un nouveau utilsateur est diponible pour jouer 
+            
         })
     }
 
