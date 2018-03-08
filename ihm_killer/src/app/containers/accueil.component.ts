@@ -155,7 +155,6 @@ export class AccueilComponent implements OnInit {
       let toolUrl = this.AccueilService.getMAinUrl() + this.contractDetail.contracttoolid.data.toolid.data.toolimage.data.url;
       let toolName = this.contractDetail.contracttoolid.data.toolid.data.toolname;
       let targetImg = this.AccueilService.getMAinUrl() + this.contractDetail.contacttargetid.data.killerphoto.data.url;
-      console.log(this.contractDetail);
       this.infoDetail = {
         'targetInfo': {
           'bench': this.contractDetail.contacttargetid.data.killerbench,
@@ -171,6 +170,7 @@ export class AccueilComponent implements OnInit {
         'id': this.contract[0].id,
         'canSetKillerValidation': this.contract[0].killervalidation
       }
+      this.getUsersKilled(userId);
       if (this.cardClass == '')
         this.cardClass = "card";
     }).catch(res => {
@@ -186,9 +186,7 @@ export class AccueilComponent implements OnInit {
       let contractId;
       if (res.data[0] != null) {
         contractId = res.data[0].id;
-        console.log(res.data)
         if (contractId !== undefined) {
-          console.log(contractId);
           this.contractservice.getUnConfirmedContract(contractId).then(res => {
             this.contract = res.data;
             if (this.contract[0] !== undefined) {
@@ -218,7 +216,6 @@ export class AccueilComponent implements OnInit {
           });
         }
         else {
-          console.log("Tiit");
           return null;
         }
       }
@@ -227,9 +224,15 @@ export class AccueilComponent implements OnInit {
         this.reloadData(this.userId);
       }
     })
-    console.log();
   }
+  getUsersKilled(userId) {
+    this.contractservice.getUsersKilled(userId).then(res => {
+      console.log(res);
+    }).catch(res => {
+      console.log(res)
+    });
 
+  }
   addToast() {
     var toastOptions: ToastOptions = {
       title: "Nice",

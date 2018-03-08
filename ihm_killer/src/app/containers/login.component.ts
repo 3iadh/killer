@@ -131,19 +131,20 @@ export class LoginComponent implements OnInit {
                     this.timer = setInterval(() => {
                         if (this.killer.photo != null) {
                             this.userservice.setUser(this.killer).then(res => {
-                                console.log(res);
+                                console.log(this.killer);
                                 clearInterval(this.timer);
+                                this.initKiller();
                             })
                                 .catch(res => {
                                     console.log(res);
                                 });
                         }
-                    }, 1000);
+                    }, 2000);
 
                 }).catch(res => {
 
                 });
-                this.initKiller();
+
 
                 //Après incription, je vide l'utilisateur courant
 

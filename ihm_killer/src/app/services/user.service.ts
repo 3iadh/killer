@@ -46,6 +46,7 @@ export class UserService {
 
         this.killerInfo.firstname = information[0];
         this.killerInfo.lastname = information[1];
+        console.log(killer);
         return client.createItem('killers', {
 
             'killerfirstname': this.killerInfo.firstname,
@@ -58,7 +59,8 @@ export class UserService {
             'killerisavailable': true,
             'teamid': killer.team,
             'killerphoto': killer.photo,
-            'status': 1,//Par défaut un nouveau utilsateur est diponible pour jouer 
+            'killerstatus': 1,  //Par défaut un nouveau utilsateur est diponible pour jouer 
+            'killerisavailable':1
         })
     }
 
