@@ -30,9 +30,9 @@ killers;
 
     getUser(login, password): Promise<any> {
 
-        return client.getItems('Killers', {
-            'filters[Killermail][eq]': login,
-            'filters[Killerpassword][eq]': password
+        return client.getItems('killers', {
+            'filters[killermail][eq]': login,
+            'filters[killerpassword][eq]': password
         });
     }
     getTeams() {

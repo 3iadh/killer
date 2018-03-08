@@ -4,7 +4,7 @@ services:
     directus:
         depends_on:
             - mysql
-        image: getdirectus/directus:6.4
+        image: dockercloud/directus
         container_name: directus_killer
         ports:
             - '8012:8080'
