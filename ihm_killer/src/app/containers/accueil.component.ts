@@ -1,33 +1,35 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ContractService } from "../services/contracts.service";
-import { AccueilService } from "../services/accueil.service";
+import { ContractService } from '../services/contracts.service';
+import { AccueilService } from '../services/accueil.service';
 import { MdDialog } from '@angular/material';
 
-import { DialogKillDetails, DataService } from "../containers/dialogkilldetails.component";
+import { DialogKillDetails, DataService } from '../containers/dialogkilldetails.component';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 
+
 @Component({
-  selector: 'accueil-root',
+  selector: 'app-accueil-root',
   templateUrl: '../templates/accueil.component.html',
-  styleUrls: ['../styles/accueil.component.css']
+  styleUrls: ['../styles/accueil.component.css'],
 })
 export class AccueilComponent implements OnInit {
   isConnected: boolean;
+   message: any;
   contract = [];
   contractDetail = null;
-  cardClass = "";
+  cardClass = '';
   contratId;
 
-
-  //Dans le cas ou j'ai tué quelqu'un et il faut que je déclare l'avoir tué
+  // Dans le cas ou j'ai tué quelqu'un et il faut que je déclare l'avoir tué
   killerValidationSet = false;
   canSetKillerValidation = false;
 
-  //Dans le cas ou quelqu'un m'a tué et il faut que je confirme
+  // Dans le cas ou quelqu'un m'a tué et il faut que je confirme
   imKilled = false;
   canSetImKilled = false;
+  missionStatus = false;
 
   infoDetail = {
     'targetInfo': {
@@ -61,9 +63,10 @@ export class AccueilComponent implements OnInit {
     'killed': false
   };
 
-  @Input('parentData') incomingData: string;
-
-  myUserId
+  // @Input('parentData') incomingData: string;
+  //@Input() incomingData: string;
+  afficheDetail: boolean;
+  myUserId;
   userId;
 
   constructor(private translate: TranslateService,
@@ -93,11 +96,13 @@ export class AccueilComponent implements OnInit {
 
   killDetails: string;
   ngOnInit() {
-    this.data.currentMessage.subscribe(killDetails => this.killDetails = killDetails)
+    this.afficheDetail = false;
+    this.data.currentMessage.subscribe(killDetails => this.killDetails = killDetails);
+    this.data.currentMessage.subscribe(message => this.message = message);
   }
 
 
-  //permet de confirmer que nous avons tué le target
+  // permet de confirmer que nous avons tué le target
   setContratRempli() {
     let id = this.infoDetail.id;
     if (this.infoDetail.id != null) {
@@ -105,12 +110,17 @@ export class AccueilComponent implements OnInit {
         this.killerValidationSet = true;
         // this.canSetKillerValidation = false;
 
-        //Recharger la page après validation
+        // Recharger la page après validation
         this.reloadData(this.userId);
 
-      })
+      });
     }
   }
+
+  GetProfil() {
+
+  }
+
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogKillDetails, {
       width: '400px'
@@ -120,7 +130,7 @@ export class AccueilComponent implements OnInit {
       this.setImKilled();
     });
   }
-  //Permet en tant que joueur de dire que j'ai été quillé
+  // Permet en tant que joueur de dire que j'ai été killé
 
   setImKilled() {
     let id = this.deathDetail.id;
@@ -145,47 +155,56 @@ export class AccueilComponent implements OnInit {
       console.log(res);
     });
   }
-  //recharger les données
+  // recharger les données
 
   reloadData(userId) {
     this.contractservice.getMyContract(userId).then(res => {
       this.isConnected = true;
-      this.contract = res.data;
-      this.contractDetail = this.contract[0].contractid.data;
-      let toolUrl = this.AccueilService.getMAinUrl() + this.contractDetail.contracttoolid.data.toolid.data.toolimage.data.url;
-      let toolName = this.contractDetail.contracttoolid.data.toolid.data.toolname;
-      let targetImg = this.AccueilService.getMAinUrl() + this.contractDetail.contacttargetid.data.killerphoto.data.url;
-      this.infoDetail = {
-        'targetInfo': {
-          'bench': this.contractDetail.contacttargetid.data.killerbench,
-          'firstname': this.contractDetail.contacttargetid.data.killerfirstname,
-          'killerlastname': this.contractDetail.contacttargetid.data.killerlastname,
-          'killerusername': this.contractDetail.contacttargetid.data.killersurname,
-          'userImg': targetImg,
-        },
-        'tool': toolUrl,
-        'toolName': toolName,
-        'action': this.contractDetail.contracttoolid.data.toolusage,
-        'startDate': this.contractDetail.contractstartdate,
-        'id': this.contract[0].id,
-        'canSetKillerValidation': this.contract[0].killervalidation
+       this.message = userId;
+      if (res.data.length !== 0) {
+        this.contract = res.data;
+        this.contractDetail = this.contract[0].contractid.data;
+        let toolUrl = this.AccueilService.getMAinUrl() + this.contractDetail.contracttoolid.data.toolid.data.toolimage.data.url;
+        let toolName = this.contractDetail.contracttoolid.data.toolid.data.toolname;
+        let targetImg = this.AccueilService.getMAinUrl() + this.contractDetail.contacttargetid.data.killerphoto.data.url;
+        console.log(this.contractDetail);
+        this.infoDetail = {
+          'targetInfo': {
+            'bench': this.contractDetail.contacttargetid.data.killerbench,
+            'firstname': this.contractDetail.contacttargetid.data.killerfirstname,
+            'killerlastname': this.contractDetail.contacttargetid.data.killerlastname,
+            'killerusername': this.contractDetail.contacttargetid.data.killersurname,
+            'userImg': targetImg,
+          },
+          'tool': toolUrl,
+          'toolName': toolName,
+          'action': this.contractDetail.contracttoolid.data.toolusage,
+          'startDate': this.contractDetail.contractstartdate,
+          'id': this.contract[0].id,
+          'canSetKillerValidation': this.contract[0].killervalidation
+        };
+
+
+      if (this.cardClass === '') {
+        this.cardClass = 'card';
       }
-      this.getUsersKilled(userId);
-      if (this.cardClass == '')
-        this.cardClass = "card";
+    } else {
+      this.missionStatus = true;
+    }
     }).catch(res => {
       console.log(res);
     });
   }
 
 
-  //Récupérer le contrat que j'ai perdu
+  // Récupérer le contrat que j'ai perdu
 
   getLostedContrat(id) {
     this.contractservice.getRequestConfirmation(id).then(res => {
       let contractId;
       if (res.data[0] != null) {
         contractId = res.data[0].id;
+        console.log(res.data);
         if (contractId !== undefined) {
           this.contractservice.getUnConfirmedContract(contractId).then(res => {
             this.contract = res.data;
@@ -209,8 +228,8 @@ export class AccueilComponent implements OnInit {
                 'startDate': this.contractDetail.contractstartdate,
                 'id': this.contract[0].id,
                 'killed': true
-              }
-              this.cardClass = "cardLost";
+              };
+              this.cardClass = 'cardLost';
             }
             this.reloadData(this.userId);
           });
@@ -218,12 +237,11 @@ export class AccueilComponent implements OnInit {
         else {
           return null;
         }
-      }
-      else {
+      } else {
 
         this.reloadData(this.userId);
       }
-    })
+    });
   }
   getUsersKilled(userId) {
     this.contractservice.getUsersKilled(userId).then(res => {
@@ -235,13 +253,14 @@ export class AccueilComponent implements OnInit {
   }
   addToast() {
     var toastOptions: ToastOptions = {
-      title: "Nice",
-      msg: "Vous venez de killer XXX",
+      title: 'Nice',
+      msg: 'Vous venez de killer XXX',
       showClose: true,
       timeout: 5000,
       theme: 'default'
     };
-    // Add see all possible types in one shot 
+
+    // Add see all possible types in one shot
     this.toastyService.info(toastOptions);
     // this.toastyService.success(toastOptions);
     // this.toastyService.wait(toastOptions);

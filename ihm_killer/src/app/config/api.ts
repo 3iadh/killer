@@ -6,6 +6,8 @@ const globalPath = `/api/1.1`;
 
 export const acceToken = 'UCKY3TmBGzuSt7bdnIJA04wbeqW0Ue0h';
 
+export const urlMain = 'http://10.24.217.42:8012'; 
+
 
 export const apisUrl = `${url}${globalPath}`;
 //pour les reports 

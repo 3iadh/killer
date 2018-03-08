@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LoginService } from "../services/login.service";
-import { UserService } from "../services/user.service";
-import { ContractService } from "../services/contracts.service";
+import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
+import { ContractService } from '../services/contracts.service';
 @Component({
     selector: 'app-root',
     templateUrl: '../templates/login.component.html',
@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
     parentData;
     isConnected: boolean;
+
+
     // showMenu : Boolean ;
     myUserId;
     timer;
@@ -35,13 +37,14 @@ export class LoginComponent implements OnInit {
     };
 
     inscription = false;
+    inscriptionStatut = false;
     error = false;
 
-    //Values from user interface
+    // Values from user interface
     user = {
         useremail: 'ayawo-dela-fiogbo.ameganvi@capgemini.com',
         userpassword: 'espoir'
-    }
+    };
 
     constructor(private translate: TranslateService,
         private router: Router,
@@ -58,7 +61,6 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
         this.getTeams();
-
     }
     selectFile() {
         document.getElementById('file').click();
@@ -67,10 +69,10 @@ export class LoginComponent implements OnInit {
     readURL() {
         let file = (<HTMLInputElement>document.getElementById('file')).files[0];
         var reader = new FileReader();
-        let a = "";
+        let a = '';
         reader.onloadend = function () {
-            document.getElementById('clock').style.backgroundImage = "url(" + reader.result + ")";
-            console.log((<HTMLInputElement>document.getElementById('file')).files[0])
+            document.getElementById('clock').style.backgroundImage = 'url(' + reader.result + ')';
+            console.log((<HTMLInputElement>document.getElementById('file')).files[0]);
         }
         if (file) {
             reader.readAsDataURL(file);
@@ -78,81 +80,87 @@ export class LoginComponent implements OnInit {
     }
 
     seConnecter(user) {
-        //return a promise containing data for user set in pramas
+        // return a promise containing data for user set in params
         this.killers$ = this.loginservice.getUser(this.user.useremail, this.user.userpassword);
 
         this.killers$.then(res => {
 
             this.killers = res.data;
-
-            //if a result data is not null ==> a user found for the params ==> is connected
-            if (this.killers.length != 0) {
-                this.killers = res.data
+            // if a result data is not null ==> a user found for the params ==> is connected
+            if (this.killers.length !== 0) {
+                this.killers = res.data;
                 // console.log(this.killers);
-                //After creating the account, redirect to the Accueil page
-                this.parentData = this.killers[0].id + " -0";
+                // After creating the account, redirect to the Accueil page
+                this.parentData = this.killers[0].id + '-0';
 
                 // this.ShowMenu = true ;
                 // this.router.navigate(['/accueil', {userId : this.killers[0].id}]); //Passgin
-                this.router.navigate(['/accueil'], { queryParams: { userId: this.killers[0].id } })
+                this.router.navigate(['/accueil'], { queryParams: { userId: this.killers[0].id } });
             } else {
-                //No user found 
+                // No user found
                 this.error = true;
-                console.log('No user fonud')
+                console.log('No user found');
             }
         }).catch(err => {
             console.log(err);
-        })
+        });
     }
 
     seInscrire() {
-
+console.log(this.killer);
         this.errorMail = false;
-        //check if capgemini mail *** Remplacer après par un Regex
-        let email = this.killer.email; //userEmail 
+        // check if capgemini mail *** Remplacer après par un Regex
+        let email = this.killer.email; // userEmail
+// split to take the first party of the mail
+        let killerFirstInformation = email.split('@');
 
-        let killerFirstInformation = email.split("@"); //split to take the first party of the mail 
-
-        let userCivility = killerFirstInformation[0]; //to get the name and the first name
+        let userCivility = killerFirstInformation[0]; // to get the name and the first name
         let information = userCivility.split('.');
-
-        if ((information.length != 2) || killerFirstInformation[1] != 'capgemini.com') { //Dans un cas normal , nous devrions avoir un tableau avec 2 éléments , contenant le nom et le prénom
-            this.errorMail = true
+ /**
+  * Dans un cas normal , nous devrions avoir un tableau avec 2 éléments , contenant le nom et le prénom
+  *
+  **/
+        if ((information.length !== 2) || killerFirstInformation[1] !== 'capgemini.com') {
+            this.errorMail = true;
         } else {
-            if (this.killer.bench != '' && this.killer.email != '' && this.killer.password != '' && this.killer.surnom != '') {
-                console.log('toto')
+            if (this.killer.bench !== '' && this.killer.email !== '' && this.killer.password !== '' && this.killer.surnom !== '') {
                 this.champsVide = false;
                 this.inscription = false;
                 console.log(this.killer);
-                var url = document.getElementById('clock').style.backgroundImage;
-                let photo = url.substr(5, url.length - 7);
-                this.userservice.createUserPicture(photo, this.killer.surnom).then(res => {
-                    this.killer.photo = res.data.id;
-                    this.timer = setInterval(() => {
-                        if (this.killer.photo != null) {
-                            this.userservice.setUser(this.killer).then(res => {
-                                console.log(this.killer);
-                                clearInterval(this.timer);
-                                this.initKiller();
-                            })
-                                .catch(res => {
-                                    console.log(res);
-                                });
-                        }
-                    }, 2000);
-
-                }).catch(res => {
-
+                this.userservice.setUser(this.killer).then(res => {
+                    console.log(res);
+                    this.inscriptionStatut = true;
+                    clearInterval(this.timer);
                 });
+// début insertion de photo
+                // var url = document.getElementById('clock').style.backgroundImage;
+                // let photo = url.substr(5, url.length - 7);
+                // this.userservice.createUserPicture(photo, this.killer.surnom).then(res => {
+                //     this.killer.photo = res.data.id;
+                //     this.timer = setInterval(() => {
+                //         if (this.killer.photo != null) {
+                //             this.userservice.setUser(this.killer).then(res => {
+                //                 console.log(res);
+                //                 clearInterval(this.timer);
+                //             })
+                //                 .catch(res => {
+                //                     console.log(res);
+                //                 });
+                //         }
+                //     }, 1000);
 
+                // }).catch(res => {
 
-                //Après incription, je vide l'utilisateur courant
+                // });
+                // fin insertion de photo
+                this.initKiller();
 
-                //After creating the account, redirect to the login page
-                this.router.navigate(['/login']);
+                // Après incription, je vide l'utilisateur courant
 
+                // After creating the account, redirect to the login page
+               // this.router.navigate(['/login']);
             } else {
-                //Certains champs sont vide
+                // Certains champs sont vide
                 this.champsVide = true;
             }
         }
@@ -179,8 +187,9 @@ export class LoginComponent implements OnInit {
     passwordsAreDifferent() {
         this.errorPassword = false;
 
-        if (this.killer.password != this.killer.password2)
+        if (this.killer.password !== this.killer.password2){
             this.errorPassword = true;
+        }
 
     }
 
@@ -200,11 +209,12 @@ export class LoginComponent implements OnInit {
     getTeams() {
         this.loginservice.getTeams().then(res => {
             this.teams = res.data;
-        })
+        });
     }
 
 
 }
+
 
 
 

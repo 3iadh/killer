@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
-import { AppComponent } from "./containers/app.component";
-import { FormsModule } from '@angular/forms'
+import { AppComponent } from './containers/app.component';
+import { FormsModule } from '@angular/forms';
 
-//For http request
+// For http request
 import { HttpModule, Http } from '@angular/http';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 // For routing
@@ -14,39 +14,41 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 
-//For internationalization 
+// For internationalization
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { ConnexionService } from "./services/connexion.service";
+import { ConnexionService } from './services/connexion.service';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
 
 
-//For animation and material design
+// For animation and material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from "./containers/login.component";
+import { LoginComponent } from './containers/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {
-  MaterialModule
+  MaterialModule,
 } from '@angular/material';
 
 import 'hammerjs';
-import { LoginService } from "./services/login.service";
-import { UserService } from "./services/user.service";
-import { AccueilComponent } from "./containers/accueil.component";
-import { DialogKillDetails, DataService } from "./containers/dialogkilldetails.component";
-import { AccueilService } from "./services/accueil.service";
-import { ContractService } from "./services/contracts.service";
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
+import { AccueilComponent } from './containers/accueil.component';
+import { DialogKillDetails, DataService } from './containers/dialogkilldetails.component';
+import { AccueilService } from './services/accueil.service';
+import { ContractService } from './services/contracts.service';
+import { KillerDataService } from './services/killer-data.service';
 import { DatePipe } from '@angular/common';
-import { FooterComponent } from "./containers/footer.component";
-import { MenuComponent } from "./containers/menu.component";
-import { FabToolBarComponent } from "./containers/fabtoolbar.component";
+import { FooterComponent } from './containers/footer.component';
+import { MenuComponent } from './containers/menu.component';
+import { FabToolBarComponent } from './containers/fabtoolbar.component';
 
 
 import { ToastyModule } from 'ng2-toasty';
+import { UserProfilComponent } from './user-profil/user-profil.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { ToastyModule } from 'ng2-toasty';
     FooterComponent,
     MenuComponent,
     DialogKillDetails,
-    FabToolBarComponent
+    FabToolBarComponent,
+    UserProfilComponent
 
   ],
   imports: [
@@ -87,7 +90,8 @@ import { ToastyModule } from 'ng2-toasty';
     UserService,
     AccueilService,
     ContractService,
-    DatePipe, 
+    KillerDataService,
+    DatePipe,
     DataService
   ],
   entryComponents: [

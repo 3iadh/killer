@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
 
 import * as apiUrls from '../config/api';
 
-declare var require: any
+declare var require: any ;
 const RemoteInstance = require('directus-sdk-javascript/remote.js');
 
 const client = new RemoteInstance({

@@ -1,8 +1,14 @@
 <div class="menus" *ngIf="showMenu" class="mymenu">
         <div class="content">
-            <button md-button (click)="gotoDashboard()">{{'MENU.DASHBORD' | translate}}</button>
-            <button md-button (click)="gotoTimeline()">{{'MENU.TIMELINE' | translate}}</button>
-            <button md-button  >{{'MENU.PARAMETRES' | translate}}</button>
-            <button md-button *ngIf="!isNotConnected" md-button (click)="deconnect()">{{'MENU.DECONNEXION' | translate}}</button>
+            <div class="row">
+                    <button md-button (click)="gotoDashboard()">{{'MENU.DASHBORD' | translate}}</button>
+                    <button md-button (click)="gotoTimeline()">{{'MENU.TIMELINE' | translate}}</button>
+                    <button md-button  >{{'MENU.PARAMETRES' | translate}}</button>
+                    <button md-button (click)="gotoMyProfile()" >{{'MENU.PROFIL' | translate}}</button>
+                    <button md-button *ngIf="!isNotConnected" md-button (click)="deconnect()">{{'MENU.DECONNEXION' | translate}}</button>
+              
+            </div>
+           
+            
         </div>
     </div>

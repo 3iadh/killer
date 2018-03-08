@@ -1,5 +1,8 @@
+
+<!-- Fin Profil -->
 <killer-menu [showMenu]=isConnected></killer-menu>
 <!-- Fin Menu -->
+
 <!-- Start card -->
 <md-toolbar *ngIf="deathDetail.killed == true" id="toolbar">
     <span>{{deathDetail.killerInfo.firstname}} {{deathDetail.killerInfo.lastname}} déclare vous avoir kill avec l'outil: {{deathDetail.toolName}}</span>
@@ -10,9 +13,20 @@
     </div>
 </md-toolbar>
 <!-- Your card starts here -->
-<div align="center">
-    <md-spinner *ngIf="cardClass == ''" id="spinner"></md-spinner>
+<!-- <div class="{{cardClass}}" *ngIf="infoDetail == '' && cardClass ==''">
+        <h1 class="name" >
+                {{'CONTRAT.CONTRATABSENT' | translate }}
+            </h1>
+</div> -->
+<div class="alert alert-info fade in alert-dismissable" *ngIf="missionStatus">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong> {{'CONTRAT.CONTRATABSENT' | translate }}</strong>
+      </div>
+
+<div align="center" >
+<md-spinner *ngIf="cardClass == ''" id="spinner"></md-spinner>
 </div>
+
 <div class="{{cardClass}}" *ngIf="cardClass !== ''">
     <h1 class="name" tooltip="Name of your Avatar" *ngIf="deathDetail.killed != true">
         {{'CONTRAT.ENCOURS' | translate }}
@@ -20,7 +34,7 @@
     <h1 class="name" tooltip="Name of your Avatar" *ngIf="deathDetail.killed == true">
         {{'CONTRAT.MISSIONANNULEE' | translate }}
     </h1>
-
+    
     <div class="cost" tooltip="Deploy cost">
         E
         <img src="../assets/img/wifi.svg" />
@@ -59,6 +73,7 @@
     <!-- <div class="sheen"></div> -->
 
 </div>
+
 <div class="correct" *ngIf="infoDetail.canSetKillerValidation == 0 && deathDetail.killed != true && cardClass !== ''">
     <a class="waves-effect waves-light btn">
         <button (click)="setContratRempli()">
