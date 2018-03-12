@@ -45,6 +45,7 @@ import { DatePipe } from '@angular/common';
 import { FooterComponent } from './containers/footer.component';
 import { MenuComponent } from './containers/menu.component';
 import { FabToolBarComponent } from './containers/fabtoolbar.component';
+import { TimelineComponent } from "./containers/timeline.component";
 
 
 import { ToastyModule } from 'ng2-toasty';
@@ -59,8 +60,8 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
     MenuComponent,
     DialogKillDetails,
     FabToolBarComponent,
-    UserProfilComponent
-
+    UserProfilComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

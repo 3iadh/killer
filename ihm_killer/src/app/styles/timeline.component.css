@@ -1,0 +1,438 @@
+/*******************/
+/*** SMARTPHONES ***/
+/*******************/
+
+.divName {
+    color: #0072b4;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+a {
+    float: right;
+    vertical-align: bottom;
+    text-decoration: underline;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+a:hover {
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
+
+/* DivRanking */
+
+#rankingDiv {
+    width: 95%;
+    margin: 2% 2.5% ;
+}
+
+#rankingList li {
+    width: 100%;
+    height: 100%;
+    background-color: #e3edf0;
+    margin-bottom: 1.5%;
+    padding: 1%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.divImgs {
+    width: 10rem;
+    max-width: 30%;
+    height: 10rem;
+    position: relative;
+    display: inline-block;
+}
+
+.imgKiller {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 150%;
+    position: relative;
+    left: 2rem;
+    top: 1rem;
+}
+
+.imgLaurel {
+    position: absolute;
+    left: 7%;
+    top: 7%;
+    width: 4rem;
+    height: 3rem;
+}
+
+.divInfos {
+    display: inline-block;
+    width: 65%;
+    margin-left: 2%;
+    vertical-align: top;
+    font-size: 70%;
+}
+
+.killerIdentity {
+    height: 30%;
+    padding: 0;
+    margin-left: 4%;
+}
+
+.surnameKiller {
+    font-size: 150%;
+    font-weight: bold;
+    color: linear-gradient(#59ac93, #47a1cf);
+    background: -webkit-linear-gradient(#59ac93, #47a1cf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+.nameKiller {
+    font-size: 120%;
+    color: linear-gradient(#59ac93, #47a1cf);
+    background: -webkit-linear-gradient(#59ac93, #47a1cf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.killerKillingInformations {
+    height: 30%;
+    margin-left: 8%;
+    padding: 0;
+}
+
+.cols {
+    display: inline-block;
+    width: 23%;
+}
+
+.th {
+    text-align: center;
+    font-weight: bold;
+}
+
+.td {
+    text-align: center;
+}
+
+
+/* DETAILS */
+
+.imgKillerDetails {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 150%;
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+    margin-right: 5%;
+}
+
+.imgLaurelDetails {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1;
+    width: 4rem;
+    height: 3rem;
+}
+
+.divInfosDetails {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.divInfosDetails .killerIdentity {
+    font-size: 80%;
+    margin-left: -4%;
+}
+
+.detailsLocation div {
+    font-size: 60%;
+    width: 45%;
+    margin-bottom: 1rem;
+}
+
+.detailsLocation div p {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.detailsKills {
+    margin-left: -8%;
+}
+
+.detailsKills .th {
+    font-size: 70%;
+    height: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+.detailsKills .td {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.tool {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/* DivLastKills */
+
+#lastKillsDiv {
+    width: 95%;
+    margin: 2% 2.5%;
+    border-radius: 5px;
+}
+
+.blackSkull {
+    width: 2rem;
+    height: 2rem;
+}
+
+#lastKillsList {
+    background-color: #e3edf0;
+    padding: 0;
+}
+
+.dayKill {
+    width: 45%;
+    display: inline-block;
+    text-align: left;
+    font-weight: bold;
+    vertical-align: top;
+    margin-top: 0.9rem;
+    padding-bottom: 0.5rem;
+    margin-left: 1%;
+    font-size: 80%;
+}
+
+.killerAndKilled {
+    width: 50%;
+    display: inline-block;
+    color: #707475;
+    margin-left: 2%;
+    font-size: 70%;
+}
+
+.killed {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-decoration: line-through;
+}
+
+.killer {
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    width: 95%;
+    margin: auto;
+    border-bottom: 1px #585959 solid;
+}
+
+
+/*******************/
+/**** TABLETTES ****/
+/*******************/
+
+@media only screen and (min-width : 768px) {
+    /* DivRanking */
+
+    .divImgs {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .imgKiller {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .imgLaurel {
+        width: 6rem;
+        height: 4.5rem;
+    }
+
+    .divInfos {
+        font-size: 120%;
+        margin-left: 0;
+        max-width: 65%;
+    }
+
+
+    /* DETAILS */
+
+    .imgKillerDetails {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .imgLaurelDetails {
+        width: 6rem;
+        height: 4.5rem;
+    }
+    
+    .divInfosDetails .killerIdentity {
+        font-size: 120%;
+    }
+    
+    .detailsLocation div {
+        font-size: 120%;
+    }
+    
+    .detailsKills .th {
+        font-size: 120%;
+        height: 4rem;
+    }
+    
+    .detailsKills .td {
+        font-size: 180%;
+    }
+    
+    .tool {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+
+/*******************/
+/***** DESKTOP *****/
+/*******************/
+
+@media only screen and (min-width : 1224px) {
+
+    /* DivRanking */
+
+    #rankingDiv {
+        width: 72%;
+        float: left;
+        margin: 1%;
+    }
+
+    .divImgs {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .imgKiller {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .imgLaurel {
+        width: 7rem;
+        height: 5.5rem;
+    }
+
+    .divInfos {
+        font-size: 140%;
+    }
+    
+    .surnameKiller {
+        font-size: 200%;
+    }
+    
+    .nameKiller {
+        font-size: 140%;
+    }
+    
+    .killerKillingInformations {
+        margin-top: 2%;
+    }
+    
+    /* DETAILS */
+
+    .imgKillerDetails {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .imgLaurelDetails {
+        width: 7rem;
+        height: 5.5rem;
+    }
+
+    .divInfosDetails .killerIdentity {
+        font-size: 150%;
+    }
+
+    .detailsLocation div {
+        font-size: 140%;
+        margin-bottom: 2rem;
+    }
+
+    .detailsKills .th {
+        font-size: 160%;
+        height: 6rem;
+    }
+
+    .detailsKills .td {
+        font-size: 200%;
+    }
+
+    .tool {
+        width: 6rem;
+        height: 6rem;
+    }
+
+
+    /* DivLastKills */
+
+    #lastKillsDiv {
+        width: 25%;
+        float: left;
+        margin: 2rem 1% 2rem 0;
+        border-radius: 5px;
+    }
+}
+
+
+/*******************/
+/******* TV ********/
+/*******************/
+
+@media screen and (min-width: 1824px) {
+    .dayKill {
+      font-size: 140%;
+    }
+
+    .killerAndKilled {
+        font-size: 110%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1224px) {
+    #lastKillsDiv {
+        padding: 0 1%;
+    }
+
+    #lastKillsList {
+        width: 49%;
+        display: inline-block;
+        height: 100%;
+        margin-right: 0;
+    }
+
+    #lastKillsListTwo {
+        background-color: #e3edf0;
+        display: inline-block;
+        padding: 0;
+        width: 49%;
+        height: 100%;
+        vertical-align: top;
+        margin-left: 0;
+    }
+}

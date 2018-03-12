@@ -253,4 +253,12 @@ export class ContractService {
 
         })
     }
+
+    getConfirmedContracts() {
+        return client.getItems('Killercontracts', {
+            'filters[targetvalidation][eq]': 1,
+            'order[handlingenddate]':'DESC',
+            'depth':5
+        });
+    }
 }
