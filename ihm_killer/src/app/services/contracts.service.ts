@@ -255,7 +255,7 @@ export class ContractService {
     }
 
     getConfirmedContracts() {
-        return client.getItems('Killercontracts', {
+        return client.getItems('killercontracts', {
             'filters[targetvalidation][eq]': 1,
             'order[handlingenddate]':'DESC',
             'depth':5
