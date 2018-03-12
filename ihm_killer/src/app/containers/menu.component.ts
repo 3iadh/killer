@@ -47,7 +47,7 @@ export class MenuComponent {
   }
 
   gotoTimeline() {
-
+    this.router.navigate(['/timeline']);
   }
   gotoDashboard() {
 
