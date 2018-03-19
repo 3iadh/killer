@@ -213,7 +213,7 @@ export class ContractService {
 
     //Je confirme que j'ai été killé
     confirmImKilled(id,killDescription,date) {
-        return client.updateItem('Killercontracts', id, {
+        return client.updateItem('killercontracts', id, {
             'targetvalidation': 1,
             'handlingenddate': this.transformDate(date),
             'killdescription':killDescription.description
