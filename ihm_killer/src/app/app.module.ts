@@ -57,7 +57,8 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
     AccueilComponent,
     FooterComponent,
     MenuComponent,
-    TimelineComponent
+    TimelineComponent,
+    UserProfilComponent
   ],
   imports: [
     BrowserModule,
