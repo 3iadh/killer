@@ -1,11 +1,9 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit,HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ContractService } from '../services/contracts.service';
 import { AccueilService } from '../services/accueil.service';
-import { MdDialog } from '@angular/material';
-
-import { DialogKillDetails, DataService } from '../containers/dialogkilldetails.component';
+import { MdTooltip } from '@angular/material';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 
 
@@ -75,9 +73,7 @@ export class AccueilComponent implements OnInit {
     private contractservice: ContractService,
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig,
-    private AccueilService: AccueilService,
-    public dialog: MdDialog,
-    private data: DataService
+    private AccueilService: AccueilService
   ) {
     translate.setDefaultLang('fr');
     this.toastyConfig.theme = 'material';
@@ -94,11 +90,30 @@ export class AccueilComponent implements OnInit {
 
   }
 
-  killDetails: string;
+  canShowMenu = true;
+  md = false;
+  killDetails = {
+    'description': '',
+    'date': '',
+    'time': ''
+  }
+  
+  public innerWidth: any
   ngOnInit() {
-    this.afficheDetail = false;
-    this.data.currentMessage.subscribe(killDetails => this.killDetails = killDetails);
-    this.data.currentMessage.subscribe(message => this.message = message);
+    this.innerWidth = window.innerWidth;
+    if(this.innerWidth <= 1024){
+      this.canShowMenu = false;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if(this.innerWidth <= 1024){
+      this.canShowMenu = false;
+    }else{
+      this.canShowMenu = true;
+    }
   }
 
 
@@ -117,25 +132,23 @@ export class AccueilComponent implements OnInit {
     }
   }
 
-  GetProfil() {
-
-  }
-
-  openDialog(): void {
-    let dialogRef = this.dialog.open(DialogKillDetails, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.setImKilled();
-    });
-  }
   // Permet en tant que joueur de dire que j'ai été killé
-
   setImKilled() {
     let id = this.deathDetail.id;
     if (id != null) {
-      this.contractservice.confirmImKilled(id, this.killDetails).then(res => {
+      this.killDetails.time = this.killDetails.time + "-00"
+      this.killDetails.time = this.killDetails.time.replace(":", "-");
+      var binddingDate = "" + this.killDetails.date + "-" + this.killDetails.time;
+      var dateArr = binddingDate.split("-");
+      var date = new Date(parseInt(dateArr[0], 10),
+        parseInt(dateArr[1], 10) - 1,
+        parseInt(dateArr[2], 10),
+        parseInt(dateArr[3], 10),
+        parseInt(dateArr[4], 10),
+        parseInt(dateArr[5], 10));
+      console.log(binddingDate)
+      console.log(date)
+      this.contractservice.confirmImKilled(id, this.killDetails, date).then(res => {
         this.killerValidationSet = true;
         this.canSetKillerValidation = false;
         this.contractservice.setNewContractToKiller(this.infoDetail.id, this.deathDetail.killerInfo.id).then(res => {

@@ -1,9 +1,27 @@
-.toolbar-button {
-    padding: 0 14px;
-    color: red;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-    float: right;
-  }
+.footer{
+  background-color: #f4f4f4 ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6%;
+  display: flex;
+  margin-top: 6%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.footer span{
+  margin: auto;
+  margin-top: 1vh;
+  font-size: 2vh;
+  position: relative;
+  top: 0vh;
+  color: #157fb8;
+}
+.footer img{
+  width: 7vw;
+  position: relative;
+  top: 1vh;
+}

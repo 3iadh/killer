@@ -8,8 +8,6 @@ import { MdDialog } from '@angular/material';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 import { AccueilService } from '../services/accueil.service';
 
-import { DialogKillDetails, DataService } from '../containers/dialogkilldetails.component';
-
 
 @Component({
   selector: 'app-user-profil',
@@ -42,8 +40,7 @@ userId;
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig,
     private AccueilService: AccueilService,
-    public dialog: MdDialog,
-    private data: DataService
+    public dialog: MdDialog
   ) {
     translate.setDefaultLang('fr');
     this.toastyConfig.theme = 'material';
@@ -57,7 +54,6 @@ userId;
      }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = this.killer);
     console.log('user connected id from parent: ' + this.userId);
     this.isConnected = true;
   }

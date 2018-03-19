@@ -4,11 +4,8 @@
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
-    padding: 15px 10px 50px 10px;
     background-color: #f4f4f4;
-    /* background-image: url(../assets/img/chip.svg); */
     background-repeat: repeat;
-    background-size: 200px;
 }
 
 .title {
@@ -16,16 +13,6 @@ body {
     text-align: center;
     margin: 0 0 5px 0;
     font-size: 22px;
-}
-
-p {
-    color: white;
-    text-align: center;
-    opacity: .8;
-    margin-bottom: 40px;
-    margin: 0 auto 35px auto;
-    max-width: 600px;
-    font-size: 16px;
 }
 
 .card {
@@ -40,6 +27,10 @@ p {
     cursor: pointer;
 }
 
+main {
+    margin-bottom: 10%;
+}
+
 .cardLost {
     background-color: #cf2828;
     border: solid 10px #000000;
@@ -50,12 +41,6 @@ p {
     overflow: hidden;
     transition: all ease-out .2s;
     cursor: pointer;
-}
-
-.correct {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .card:hover,
@@ -98,8 +83,6 @@ p {
 }
 
 .image img {
-    /* background-image: url(../assets/portrait.jpg); */
-    /* Image from https://opengameart.org/content/an-arith */
     height: 250px;
     width: 100%;
     background-color: white;
@@ -194,24 +177,7 @@ p {
     transform-origin: bottom left;
 }
 
-@keyframes tooltipPop {
-    0% {
-        transform: scale(.6);
-    }
-    60% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-/* The shine on the card when you hover over it */
-
 .btn {
-    /* width: 12vw ;
-    font-family: faith; */
     margin: auto;
     margin-bottom: 3vh;
 }
@@ -233,63 +199,6 @@ p {
     animation: sheen .35s linear 1;
 }
 
-@keyframes sheen {
-    0% {
-        top: -10%;
-        height: 0%;
-        opacity: 0;
-    }
-    25% {
-        top: -10%;
-        height: 20%;
-        opacity: .3;
-    }
-    50% {
-        top: 20%;
-        height: 50%;
-        opacity: .5;
-    }
-    75% {
-        top: 110%;
-        height: 20%;
-        opacity: .3;
-    }
-    100% {
-        top: 110%;
-        height: 0%;
-        opacity: 0;
-    }
-}
-
-
-/* Mozilla license info */
-
-
-/* .license {
-  position: fixed;
-  right: 15px;
-  bottom: 14px;
-  font-size: 13px;
-  color: white;
-  color: rgba(255,255,255,.4);
-}
-
-.license a {
-  margin-left: 5px;
-}
-
-.license img {
-  width: 60px;
-  opacity: .4;
-  position: relative;
-  top: 3px;
-  transition: opacity .2s ease-out;
-}
-
-.license img:hover {
-  opacity: .6;
-} */
-
 .correct {
     color: red;
 }
@@ -299,23 +208,551 @@ p {
     width: 30px;
 }
 
-.toolbar-button {
-    padding: 0 14px;
-    color: red;
-    margin-left: 15px;
-}
-
 #toolbar {
     padding-top: 0px;
-    margin-bottom: 10px;
     color: white;
-    background: #cf2828;
+    background: #ff404a;
+    margin-bottom: 15px;
+    width: 98%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    vertical-align: middle;
+    border-radius: 5px;
+    height: 50px;
+    display: block;
+}
+
+#confirmContainer {
+    margin-right: 0px;
+    margin: 0.3%;
+    margin-left: 3%;
+    float: right;
+    width: 17%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tooldetails {
+    width: 78%;
+    display: inline-block;
 }
 
 #toolbar span {
-    margin-right: 10px
+    margin-right: 10px;
+    font-size: 14.5px;
 }
-#spinner{
-  height: 200px;
-  width: 200px;
+
+.nameToolb {
+    margin-left: 11%;
+}
+
+.toolbarResponsiveSkull {
+    height: 100%;
+    width: 25%;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.confirmTool {
+    margin-left: 10%;
+    margin-top: 0.7%;
+}
+
+#spinner {
+    height: 200px;
+    width: 200px;
+}
+
+#toolbar label {
+    font-size: 14.5px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+#toolbar img {
+    margin-left: 3%;
+    vertical-align: middle;
+}
+
+#confirmkilled {
+    margin: 0px;
+    height: 30px;
+    width: 45px;
+}
+
+#unconfirmKilled {
+    margin: 0px;
+    height: 30px;
+    width: 45px;
+}
+
+#confirmkilled:hover,
+#unconfirmKilled:hover {
+    cursor: pointer;
+    height: 35px;
+    width: 53px;
+    margin: 0px;
+}
+
+#confirmKilledToHover {
+    color: #ff404a;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.userImg {
+    width: 100%;
+    height: 100%;
+}
+
+img.userImg {
+    margin-top: 0px;
+}
+
+.userImgContainer {
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+.grid {
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.toGradient {
+    font-size: 16px;
+    background: -webkit-linear-gradient(#5dac91, #4899c1);
+    -webkit-background-clip: text;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+}
+
+.linkProfileUser {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    color: #0074b2;
+}
+
+.leftDashboard {
+    width: 145px;
+    margin-left: 15px;
+    margin-right: auto;
+    float: left;
+}
+
+.leftDashboard p {
+    text-align: left;
+}
+
+.leftDashboard span,
+.rightDashboard span {
+    display: block;
+}
+
+.rightDashboard {
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 20%
+}
+
+.labelTitles {
+    color: #0074b2;
+    font-size: 25px;
+    padding-top: 1%;
+}
+
+.targerImgContainer img,
+.targerImgContainerHistory img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.targerImgContainer {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.targerAttributeContainer {
+    width: 15%;
+}
+
+.userTargerContainer {
+    white-space: nowrap;
+}
+
+.targerOperatingModeContainer,
+.targerBenchContainer,
+.targerButtonContainer,
+.targerAttributeContainer,
+.targerOperatingModeContainerHistory,
+.targerBenchContainerHistory,
+.targerAttributeContainerHistory,
+.dateContainerDesk,
+.hourContainer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0px;
+    margin-left: 2%;
+}
+
+#confirmKill,
+#sendKilled {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 250px !important;
+    margin-right: 0% !important;
+    float: right;
+}
+
+.targerOperatingModeContainer,
+.targerButtonContainer {
+    width: 28%;
+}
+
+.targerBenchContainer {
+    width: 7%;
+}
+
+.medalContainer,
+.deathDescription,
+.history {
+    overflow-y: auto;
+    margin-top: 5%;
+    width: 98%;
+    padding: 1%;
+}
+
+.medalContainer {
+    background-color: #e4edf0;
+    border-radius: 5px;
+}
+
+.targerOperatingModeContainerHistory {
+    width: 26%;
+}
+
+.targerAttributeContainerHistory {
+    width: 23%;
+}
+
+.targerBenchContainerHistory {
+    width: 5%;
+}
+
+.targerImgContainerHistory {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mailContainer {
+    margin-top: 10%;
+}
+
+.targetStatus {
+    height: 100%;
+    width: 100%;
+    padding: 1px;
+}
+
+.correct {
+    height: 45px;
+    width: 45px;
+    margin: auto;
+}
+
+
+textarea {
+    resize: none;
+    width: 30%;
+}
+
+.input {
+    width: 60%;
+}
+
+.descriptionContainer {
+    margin-left: 2%;
+}
+
+.deathDescription {
+    width: 90%;
+}
+
+
+/*tablette*/
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    .toGradient {
+        display: block;
+    }
+    .userImgContainer {
+        display: inline-block;
+        width: 20%;
+        margin: 0px;
+        height: 100%;
+        padding: 0px;
+        float: left;
+    }
+    .responsiveLeftContainer {
+        float: left;
+        width: 38%;
+        display: inline-block;
+        height: 100%;
+    }
+    .linkContainer {
+        float: right;
+        width: 30%;
+        display: inline-block;
+    }
+    .rightDashboard {
+        margin-right: auto;
+        margin-left: 0;
+        padding-left: 20%;
+        width: 100%;
+        display: inline-block;
+    }
+    .leftDashboard {
+        width: 98%;
+        margin-left: 15px;
+        margin-right: auto;
+        margin-top: 10px;
+        height: 30%;
+        display: block;
+        float: none;
+        margin-top: 5px;
+    }
+    .toGradientContainer {
+        width: 100%;
+        display: block;
+        margin-top: 0px;
+        margin-left: 0px;
+        float: left;
+    }
+    .mailContainer {
+        margin-top: 0%;
+        text-align: left;
+    }
+    .toolbar img {
+        vertical-align: middle;
+    }
+    .userTargerContainer {
+        width: 100%;
+    }
+    .dateContainer {
+        margin-right: 0px;
+        width: 100%;
+        margin-top: 2%;
+    }
+    .linkContainer a {
+        display: block;
+    }
+    .responsiveLeftContainer {
+        margin-left: 2%;
+    }
+    .linkProfileUser:first-child {
+        margin-top: 0px;
+    }
+    .linkProfileUser {
+        margin-top: 20px;
+    }
+    .toGradientContainer,
+    .mailContainer,
+    .dateContainer,
+    .hourContainer,
+    .descriptionContainer {
+        margin-left: 5%;
+    }
+    .userTargerContainer {
+        width: 100%;
+    }
+    .rightDashboard {
+        margin-right: auto;
+        margin-left: 0;
+        margin-top: 5%;
+        padding-left: 5%
+    }
+    .labelTitles {
+        font-size: 20px;
+    }
+    .targerOperatingModeContainerHistory,
+    .targerAttributeContainerHistory {
+        width: 22%;
+    }
+    .targerBenchContainerHistory {
+        width: 8%;
+    }
+    #toolbar {
+        padding-top: 0px;
+        color: white;
+        background: #ff404a;
+        margin-bottom: 15px;
+        width: 98%;
+        margin-left: 1%;
+        margin-bottom: 5%;
+        vertical-align: middle;
+        border-radius: 5px;
+        height: 85px;
+    }
+    .toolbarResponsiveSkull div {
+        height: 100%;
+    }
+    .toolbarResponsiveSkull {
+        width: 68%;
+        padding-top: 0px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .toolbarResponsiveSkull img {
+        text-align: left;
+        margin-left: 0px;
+        vertical-align: middle;
+    }
+    .nameToolb {
+        margin-left: 2%;
+    }
+    .confirmTool {
+        margin-left: 10px;
+        float: none;
+    }
+    #confirmContainer {
+        height: 100%;
+        width: 18%;
+        float: right;
+    }
+    #confirmContainer button,
+    .imageValidContainer {
+        margin-top: 15%
+    }
+    #confirmKill,
+    #sendKilled {
+        width: 100px !important;
+    }
+}
+
+
+/*mobile*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .toGradient {
+        display: block;
+        font-size: 13px;
+    }
+    .dateContainer,
+    .linkContainer,
+    .mailContainer,
+    .leftDashboard,
+    .rightDashboard {
+        font-size: 12px;
+    }
+    .leftDashboard {
+        height: 80%;
+        float: none;
+        width: 95%;
+    }
+    .nameToolb {
+        display: block;
+        text-align: center;
+    }
+    .tooldetails,
+    .confirmTool {
+        font-size: 12px;
+        text-align: center;
+    }
+    .toolbarResponsiveSkull div {
+        text-align: center;
+    }
+    .toolbarResponsiveSkull {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .tooldetails {
+        display: block;
+        width: 100%;
+        height: 30%;
+    }
+    #confirmContainer {
+        float: none;
+        width: 100%;
+        margin: 0px;
+        text-align: center;
+        height: 70%;
+    }
+    #toolbar {
+        height: 150px;
+    }
+    .nameToolb,
+    .confirmTool,
+    .tooldetails {
+        margin-left: 0px;
+        margin-bottom: 5px;
+    }
+    .responsiveLeftContainer {
+        margin-left: 0%;
+        width: 30%;
+        margin-top: 150px;
+        left: 0px;
+        float: left;
+        position: absolute;
+        display: block;
+        margin-left: 10px;
+    }
+    .linkContainer{
+        width: 50%;
+    }
+    .rightDashboard {
+        margin-top: 200px;
+    }
+    .userImgContainer {
+        width: 35%;
+        margin: 0px;
+        height: 100%;
+        padding: 0px;
+        display: inline-block;
+        float: left;
+    }
+    .rightDashboard {
+        vertical-align: middle;
+        text-align: center;
+    }
+    .targerImgContainer,
+    .targerImgContainerHistory {
+        text-align: center;
+        display: block;
+        float: none;
+        white-space: nowrap;
+        margin-left: 40%;
+    }
+    .targerAttributeContainer,
+    .targerOperatingModeContainer {
+        width: 45%;
+        margin: 0%;
+    }
+    .targerBenchContainer {
+        display: block;
+        margin-left: 45%;
+    }
+    .targerAttributeContainerHistory,
+    .targerOperatingModeContainerHistory,
+    .targerBenchContainerHistory {
+        width: 45%;
+        margin: 0%;
+    }
+    .targerAttributeContainerHistory {
+        margin-bottom: 10px;
+    }
+    .targerAttributeContainerHistory:last-child {
+        display: block;
+    }
 }

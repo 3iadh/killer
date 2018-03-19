@@ -1,8 +1,27 @@
-<div class="top">
-    <div>
-            <img src="../assets/img/LogoCaptain.png"  style="margin-left:20px;padding:5px;" width="50px" height="50px">
-            <label class="killerLabelLogo">The Killer Game</label>
-    </div>         
-</div>
-<router-outlet></router-outlet>
-
+<md-sidenav-container class="navContainer" fullscreen>
+    <md-sidenav #start >
+        <div class="menus mymenu" >
+            <div class="content">
+                <button md-button (click)="gotoDashboard()">{{'MENU.DASHBORD' | translate}}</button>
+                <button md-button (click)="gotoTimeline()">{{'MENU.TIMELINE' | translate}}</button>
+                <button md-button>{{'MENU.PARAMETRES' | translate}}</button>
+                <button md-button md-button (click)="deconnect()">{{'MENU.DECONNEXION' | translate}}</button>
+            </div>
+        </div>
+    </md-sidenav>
+    <div class="top">
+        <div class="navIconContainer">
+            <div>
+                <span (click)="start.open()" class="navIcon"> &#9776;</span>
+            </div>
+        </div>
+        <div class="logoContainer">
+            <div>
+                <img src="../assets/img/LogoCaptain.png">
+                <label class="killerLabelLogo">Captain Killer</label>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</md-sidenav-container>
+<killer-footer></killer-footer>

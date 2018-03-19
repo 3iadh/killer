@@ -5,8 +5,6 @@ import { ContractService } from "../services/contracts.service"; //DAO
 import { AccueilService } from "../services/accueil.service"; //DAO
 import { MdDialog } from '@angular/material'; //Confirmation Dialog
 import { Observable } from 'rxjs/Rx'; //Pour les intervals
-
-import { DialogKillDetails, DataService } from "../containers/dialogkilldetails.component";
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 
 @Component({

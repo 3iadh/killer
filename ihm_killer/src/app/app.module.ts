@@ -37,7 +37,6 @@ import 'hammerjs';
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { AccueilComponent } from './containers/accueil.component';
-import { DialogKillDetails, DataService } from './containers/dialogkilldetails.component';
 import { AccueilService } from './services/accueil.service';
 import { ContractService } from './services/contracts.service';
 import { KillerDataService } from './services/killer-data.service';
@@ -57,11 +56,7 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
     LoginComponent,
     AccueilComponent,
     FooterComponent,
-    MenuComponent,
-    DialogKillDetails,
-    FabToolBarComponent,
-    UserProfilComponent,
-    TimelineComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -92,11 +87,9 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
     AccueilService,
     ContractService,
     KillerDataService,
-    DatePipe,
-    DataService
+    DatePipe
   ],
   entryComponents: [
-    DialogKillDetails
   ],
   bootstrap: [AppComponent]
 })

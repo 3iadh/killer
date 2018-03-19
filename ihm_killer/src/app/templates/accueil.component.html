@@ -1,97 +1,165 @@
-
-<!-- Fin Profil -->
-<killer-menu [showMenu]=isConnected></killer-menu>
-<!-- Fin Menu -->
-
-<!-- Start card -->
-<md-toolbar *ngIf="deathDetail.killed == true" id="toolbar">
-    <span>{{deathDetail.killerInfo.firstname}} {{deathDetail.killerInfo.lastname}} déclare vous avoir kill avec l'outil: {{deathDetail.toolName}}</span>
-
-    <div align="right">
-        <button md-raised-button class="toolbar-button" id="confirmkilled" (click)="openDialog()">Confirmer</button>
-        <button md-raised-button class="toolbar-button">humnn??</button>
+<killer-menu [showMenu]=isConnected *ngIf="canShowMenu" class="killMenu"></killer-menu>
+<div *ngIf="deathDetail.killed" id="toolbar">
+    <div class="tooldetails">
+        <div class="toolbarResponsiveSkull">
+            <div>
+                <img src="../assets/img/Skull.png">
+                <label>T'es mort !</label>
+            </div>
+        </div>
+        <span class="nameToolb">{{deathDetail.killerInfo.firstname}} {{deathDetail.killerInfo.lastname}} indique vous avoir kill !</span>
+        <span class="confirmTool"> Vous le confirmez ?</span>
     </div>
-</md-toolbar>
-<!-- Your card starts here -->
-<!-- <div class="{{cardClass}}" *ngIf="infoDetail == '' && cardClass ==''">
-        <h1 class="name" >
-                {{'CONTRAT.CONTRATABSENT' | translate }}
-            </h1>
-</div> -->
-<div class="alert alert-info fade in alert-dismissable" *ngIf="missionStatus">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-        <strong> {{'CONTRAT.CONTRATABSENT' | translate }}</strong>
-      </div>
 
-<div align="center" >
-<md-spinner *ngIf="cardClass == ''" id="spinner"></md-spinner>
+    <div id="confirmContainer">
+        <button md-button *ngIf="!showButtons" class="md-raised" id="confirmKilledToHover" (mouseover)="confirmMouseHoverEnter()">Confirmer</button>
+        <div (mouseleave)="confirmMouseHoverLeave()" *ngIf="showButtons" class="imageValidContainer">
+            <img src="../assets/img/btn confirmer.png" id="confirmkilled" (click)="canShowDescription = true">
+            <img src="../assets/img/btn infirmer.png" id="unconfirmKilled">
+        </div>
+    </div>
 </div>
-
-<div class="{{cardClass}}" *ngIf="cardClass !== ''">
-    <h1 class="name" tooltip="Name of your Avatar" *ngIf="deathDetail.killed != true">
-        {{'CONTRAT.ENCOURS' | translate }}
-    </h1>
-    <h1 class="name" tooltip="Name of your Avatar" *ngIf="deathDetail.killed == true">
-        {{'CONTRAT.MISSIONANNULEE' | translate }}
-    </h1>
-    
-    <div class="cost" tooltip="Deploy cost">
-        E
-        <img src="../assets/img/wifi.svg" />
+<main *ngIf="loadDone">
+    <div class="leftDashboard">
+        <div class="userImgContainer">
+            <img src="{{infoDetail.userInfo.img}}" class="userImg">
+        </div>
+        <div class="responsiveLeftContainer">
+            <div class="toGradientContainer">
+                <p>
+                    <span class="toGradient">{{infoDetail.userInfo.name}}</span>
+                    <span class="toGradient">{{infoDetail.userInfo.username}}</span>
+                </p>
+            </div>
+            <div class="dateContainer">
+                <span>
+                    <label>Date d'inscription</label>
+                </span>
+                <span>
+                    {{infoDetail.userInfo.inscriptionDate}}
+                </span>
+            </div>
+            <div class="mailContainer">
+                <span>
+                    <label>Email</label>
+                </span>
+                {{infoDetail.userInfo.email.substr(0,infoDetail.userInfo.email.length - 13)}}...
+            </div>
+        </div>
+        <div class="linkContainer ">
+            <a href="#" class="linkProfileUser">Modifier le profil</a>
+            <a href="#" class="linkProfileUser">Se déconnecter</a>
+            <a href="#" class="linkProfileUser">Supprimer mon profil</a>
+        </div>
     </div>
+    <div class="rightDashboard">
+        <span>
+            <label class="labelTitles">{{'CONTRAT.ENCOURS' | translate }}</label>
+        </span>
+        <div class="userTargerContainer">
+            <div class="targerImgContainer">
+                <img src="{{ infoDetail.targetInfo.userImg }}" alt="">
+            </div>
+            <div class="targerAttributeContainer">
+                <span>
+                    <label>{{ infoDetail.targetInfo.firstname }} {{ infoDetail.targetInfo.killerlastname }}</label>
+                    <span>{{infoDetail.targetInfo.killerusername}}</span>
+                </span>
+            </div>
+            <div class="targerOperatingModeContainer">
+                <span>
+                    <label>{{'CONTRAT.MODE_OPERATOIRE' | translate }} </label>
+                    <span>{{infoDetail.toolName}}</span>
+                </span>
+            </div>
+            <div class="targerBenchContainer">
+                <span>
+                    <label>Bench</label>
+                    <span>{{infoDetail.targetInfo.bench}}</span>
+                </span>
+            </div>
+            <div class="targerButtonContainer">
+                <div *ngIf="infoDetail.canSetKillerValidation == 0 && !deathDetail.killed && cardClass !== ''">
+                    <span>
+                        <button md-button class="md-raised" id="confirmKill" (click)="setContratRempli()">Exécuté</button>
+                    </span>
+                </div>
+                <div *ngIf="deathDetail.killed">
+                    <div class="correct" mdTooltip="Mission Annulé ! ">
+                        <img src="../assets/img/cancel.png" class="targetStatus" alt="">
+                    </div>
+                    <div></div>
 
-    <div class="image" tooltip="A sweet portrait image">
-        <img src="{{ infoDetail.targetInfo.userImg }}" alt="">
-        <!--  -->
+                </div>
+                <div *ngIf="infoDetail.canSetKillerValidation == 1 && !deathDetail.killed">
+                    <div class="correct" mdTooltip="Attente de la confirmation de l'adversaire !">
+                        <img src="../assets/img/checked.png" class="targetStatus">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deathDescription" *ngIf="canShowDescription">
+            <div class="dateContainer dateContainerDesk">
+                <label> Date </label>
+                <br/>
+                <md-input-container class="input">
+                    <input mdInput tabindex="1" [(ngModel)]="killDetails.date" type="date" id="datePicker">
+                </md-input-container>
+            </div>
+            <div class="hourContainer">
+                <label> Heure </label>
+                <br/>
+                <md-input-container class="input">
+                    <input mdInput tabindex="1" [(ngModel)]="killDetails.time" type="time">
+                </md-input-container>
+            </div>
+            <div class="descriptionContainer">
+                <label>Commentaire</label>
+                <br/>
+                <md-input-container class="input">
+                    <textarea mdInput tabindex="1" [(ngModel)]="killDetails.description"></textarea>
+                </md-input-container>
+            </div>
+            <button md-button class="md-raised" id="sendKilled" (click)="setImKilled()">Envoyer</button>
+        </div>
+        <!--div class="medalContainer">
+                <label class="labelTitles">{{'CONTRAT.MEDAILLE' | translate }}</label>
+            </div-->
+        <div class="history">
+            <label class="labelTitles">{{'CONTRAT.HISTORY' | translate }}</label>
+            <div class="historyContainer" *ngFor="let user of killedUsers">
+                <div class="targerImgContainerHistory">
+                    <img src="{{ user.userImg }}" alt="">
+                </div>
+                <div class="targerAttributeContainerHistory">
+                    <span>
+                        <label>{{user.name}} {{user.lastname}}</label>
+                        <span>{{user.username}}</span>
+                    </span>
+                </div>
+                <div class="targerAttributeContainerHistory">
+                    <span>
+                        <label>{{'CONTRAT.MURDER_DATE' | translate }}</label>
+                        <span>{{user.contractDetails.endDate}}</span>
+                    </span>
+                </div>
+                <div class="targerOperatingModeContainerHistory">
+                    <span>
+                        <label>{{'CONTRAT.MODE_OPERATOIRE' | translate }} </label>
+                        <span>{{user.contractDetails.tool}}</span>
+                    </span>
+                </div>
+                <div class="targerBenchContainerHistory">
+                    <span>
+                        <label>Bench</label>
+                        <span>{{user.bench}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
+</main>
 
-    <div class="type" tooltip="Avatar Type">
-        Type: Cyber-Defender
-    </div>
-
-    <!-- Use the following list of abilities, or make up your own -->
-    <ul class="abilities" tooltip="List of anti-hacking abilities">
-        <li>Target : {{ infoDetail.targetInfo.firstname }} {{ infoDetail.targetInfo.killerlastname }}</li>
-        <li>Outil :
-            <img src="{{infoDetail.tool}}" id="toolCardImg" mdTooltip="{{infoDetail.toolName}}">
-        </li>
-        <li>Action : {{infoDetail.action}} </li>
-
-    </ul>
-
-    <div class="flavor-text" tooltip="A wise quote">
-        {{'CONTRAT.CONSIGNE' | translate }}
-    </div>
-
-    <!-- <div class="power stat" tooltip="Attack power&mdash;Number of devices">
-        G <img src="../assets/img/device.svg" />
-    </div>
-    
-    <div class="defense stat" tooltip="Defense power&mdash;Number of passwords">
-        O <img src="../assets/img/lock.svg" />
-    </div> -->
-    <!-- <div class="sheen"></div> -->
-
+<div align="center">
+    <md-spinner *ngIf="!loadDone" id="spinner"></md-spinner>
 </div>
-
-<div class="correct" *ngIf="infoDetail.canSetKillerValidation == 0 && deathDetail.killed != true && cardClass !== ''">
-    <a class="waves-effect waves-light btn">
-        <button (click)="setContratRempli()">
-            <i class="material-icons right">check</i>
-        </button>
-    </a>
-    <br>
-</div>
-<div class="correct" *ngIf="infoDetail.canSetKillerValidation == 1 && deathDetail.killed != true">
-    <h4> {{'CONTRAT.ATTENTE' | translate }} </h4>
-</div>
-<div class="correct" *ngIf="deathDetail.killed == true">
-    <h4> {{deathDetail.killerInfo.username}} {{'CONTRAT.RECUPMISSION' | translate }} </h4>
-</div>
-
-<!-- <div class="correct"> <h3> {{'CONTRAT.VALIDE' | translate }} </h3> </div> -->
-
-
-<ng2-toasty [position]="'top-center'"></ng2-toasty>
-<!-- End card -->
-<killer-footer></killer-footer>

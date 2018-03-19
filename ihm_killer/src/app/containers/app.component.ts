@@ -14,6 +14,9 @@ export class AppComponent {
     private route: ActivatedRoute
   ) {
     translate.setDefaultLang('fr');
+  }
 
+  deconnect(){
+    this.router.navigate(['/login']);
   }
 }

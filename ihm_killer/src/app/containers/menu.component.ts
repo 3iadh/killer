@@ -4,8 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ContractService } from '../services/contracts.service';
 import { AccueilService } from '../services/accueil.service';
 import { MdDialog } from '@angular/material';
-
-import { DialogKillDetails, DataService } from '../containers/dialogkilldetails.component';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 
 
@@ -31,8 +29,7 @@ export class MenuComponent {
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig,
     private AccueilService: AccueilService,
-    public dialog: MdDialog,
-    private data: DataService
+    public dialog: MdDialog
   ) {
     translate.setDefaultLang('fr');
     this.toastyConfig.theme = 'material';
@@ -54,8 +51,7 @@ export class MenuComponent {
   }
 
   gotoMyProfile() {
-    this.data.changeMessage(this.user.nom);
-     this.router.navigate(['/profil'], { queryParams: { userId: this.userId} });
+    this.router.navigate(['/profil'], { queryParams: { userId: this.userId} });
   }
 
   gotoDossiers() {

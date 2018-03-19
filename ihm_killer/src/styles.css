@@ -1,75 +1,218 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 /* 
 @font-face {
   font-family: faith;
   src: url(peugeot-regular.ttf) format("truetype");
 }  */
 
-.mat-form-field{
-  font-family: faith; 
+.mat-form-field {
+    font-family: faith;
 }
 
-html{
+html {
     height: 100%;
     box-sizing: border-box;
-    font-family: faith; 
-  }
-  .centrer{
+    font-family: faith;
+}
+
+.centrer {
     text-align: center
 }
-body{
-  background-color: #f4f4f4;
+
+.message {
+    width: 60vw;
+    height: 40vh;
+    margin: auto;
+    text-align: center;
 }
-.message{
-  width: 60vw;
-  height: 40vh;
-  margin: auto;
-  text-align: center;
-}
-.top{
-    /* width: 100% ; */
-    height: 12vh ;
-    background-color: #f4f4f4 ;
+
+.top {
+    height: 12vh;
+    background-color: #f4f4f4;
     bottom: 0;
     left: 0;
     right: 0;
+    border: Apx yellow solid;
 }
 
-
-.logo{
-  width: 10vw;
-  padding-left: 1vh;
-    
+.top img {
+    margin-left: 20px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
 }
 
-.top, .menu, md- {
-    color: #fff ;
+.logoContainer div {
+    height: 100%;
+    width: 100%;
+    margin-top: 0px
 }
 
-.annonce{
-      height: 5vh ;
-      background-color: #007edb ;
-      margin-bottom: 3vw;      
+.top,
+.menu,
+md- {
+    color: #fff;
 }
 
+.annonce {
+    height: 5vh;
+    background-color: #007edb;
+    margin-bottom: 3vw;
+}
 
-  *,
-  *:before,
-  *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
-  
-  body {
+}
+
+body {
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
     min-height: 100%;
     font-family: faith, Arial, Roboto, sans-serif;
-  }
-.killerLabelLogo{
-  height: 90px;
-  line-height: 90px;
-  text-align: center;
-  color:#157fb8;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.killerLabelLogo {
+    height: 90px;
+    color: #157fb8;
+}
+
+.navContainer {
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+.navIcon {
+    color: #0074b2;
+    font-weight: bold;
+    font-size: 17px;
+    visibility: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navIcon {
+        visibility: visible;
+        margin-left: 5%;
+    }
+    .top {
+        width: 100%;
+    }
+    .navIconContainer {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+    }
+    .killerLabelLogo {
+        line-height: 90px;
+        text-align: center;
+        display: inline-block;
+    }
+    .killerLabelLogo,
+    .logoContainer img {
+        float: right;
+        vertical-align: middle;
+    }
+    img {
+        margin-top: 15px
+    }
+    .navIconContainer div {
+        height: 100%;
+    }
+    .logoContainer {
+        display: block;
+        width: 50%;
+        float: right;
+        margin-right: 0px;
+    }
+    .navIconContainer span {
+        vertical-align: middle;
+        text-align: center;
+        line-height: 100px;
+    }
+    .logoContainer div {
+        float: right;
+        margin-right: 2%;
+    }
+    .menus button {
+        color: #157fb8;
+        display: block;
+    }
+    
+    .content button:last-child {
+        border: 1px #157fb8 solid;
+        border-radius: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .killerLabelLogo {
+        visibility: hidden;
+    }
+    .navIcon {
+        visibility: visible;
+        margin-left: 5%;
+    }
+    .top {
+        width: 100%;
+    }
+    .navIconContainer {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        height: 40px;
+    }
+    .killerLabelLogo {
+        line-height: 90px;
+        text-align: center;
+        display: inline-block;
+        height: 40px;
+    }
+    .killerLabelLogo,
+    .logoContainer img {
+        float: right;
+        vertical-align: middle;
+    }
+    img {
+        margin-top: 15px
+    }
+    .navIconContainer div {
+        height: 100%;
+    }
+    .logoContainer {
+        display: block;
+        width: 50%;
+        float: right;
+        margin-right: 0px;
+    }
+    .navIconContainer span {
+        vertical-align: middle;
+        text-align: center;
+        line-height: 100px;
+    }
+    .logoContainer div {
+        float: right;
+        margin-right: 2%;
+    }
+    .menus button {
+        color: #157fb8;
+        display: block;
+    }
+    
+    .content button:last-child {
+        border: 1px #157fb8 solid;
+        border-radius: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
 }
