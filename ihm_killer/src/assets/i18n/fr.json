@@ -42,7 +42,10 @@
         "VALIDE" : " Mission accomplie",
         "CONFIRMATION" : "Êtes vous sûre d'avoir tué ",
         "ATTENTE" : "Attente de confirmation de la part de la cible",
-        "CONTRAT_TARGET":"Contrat sur votre tête"
+        "CONTRAT_TARGET":"Contrat sur votre tête",
+        "HISTORY" : "Historique des contrats",
+        "MURDER_DATE" : "Date du meurtre",
+        "MODE_OPERATOIRE" : "Mode opératoire"
     },
     "BOUTON" :{
         "USERINFOUPDATE" :"Modifier mes infos",
