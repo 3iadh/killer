@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2017 at 11:18 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Hôte : 127.0.0.1
+-- Généré le :  jeu. 22 mars 2018 à 16:16
+-- Version du serveur :  10.1.31-MariaDB
+-- Version de PHP :  5.6.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `killer`
+-- Base de données :  `killer`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `actions`
+-- Structure de la table `actions`
 --
 
 CREATE TABLE `actions` (
@@ -36,7 +36,7 @@ CREATE TABLE `actions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `actions`
+-- Déchargement des données de la table `actions`
 --
 
 INSERT INTO `actions` (`id`, `status`, `sort`, `actiondescription`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `actions` (`id`, `status`, `sort`, `actiondescription`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contracts`
+-- Structure de la table `contracts`
 --
 
 CREATE TABLE `contracts` (
@@ -62,7 +62,7 @@ CREATE TABLE `contracts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `contracts`
+-- Déchargement des données de la table `contracts`
 --
 
 INSERT INTO `contracts` (`id`, `status`, `sort`, `contacttargetid`, `contractactionid`, `contractplaceid`, `contractstartdate`, `contracttoolid`) VALUES
@@ -309,7 +309,7 @@ INSERT INTO `contracts` (`id`, `status`, `sort`, `contacttargetid`, `contractact
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_activity`
+-- Structure de la table `directus_activity`
 --
 
 CREATE TABLE `directus_activity` (
@@ -331,7 +331,7 @@ CREATE TABLE `directus_activity` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_activity`
+-- Déchargement des données de la table `directus_activity`
 --
 
 INSERT INTO `directus_activity` (`id`, `type`, `action`, `identifier`, `table_name`, `row_id`, `user`, `data`, `delta`, `parent_id`, `parent_table`, `parent_changed`, `datetime`, `logged_ip`, `user_agent`) VALUES
@@ -1415,12 +1415,17 @@ INSERT INTO `directus_activity` (`id`, `type`, `action`, `identifier`, `table_na
 (1068, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2017-12-02 21:29:58', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'),
 (1069, 'ENTRY', 'UPDATE', '40', 'killers', 40, 1, '{\"id\":\"40\",\"status\":\"2\",\"sort\":\"0\",\"killerlastname\":\"Bah\",\"killerfirstname\":\"Amadou\",\"killersurname\":\"amaBah\",\"killerphoto\":\"8\",\"killerbench\":\"3B10\",\"killermail\":\"amadou.bah@capgemini.com\",\"killersex\":\"1\",\"killerisavailable\":\"1\",\"killerpassword\":\"azerty\",\"killerisadmin\":null,\"killerstatus\":null,\"teamid\":\"1\"}', '{\"status\":2,\"id\":\"40\"}', NULL, NULL, 1, '2017-12-02 21:30:45', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'),
 (1070, 'ENTRY', 'UPDATE', '40', 'killers', 40, 1, '{\"id\":\"40\",\"status\":\"1\",\"sort\":\"0\",\"killerlastname\":\"Bah\",\"killerfirstname\":\"Amadou\",\"killersurname\":\"amaBah\",\"killerphoto\":\"8\",\"killerbench\":\"3B10\",\"killermail\":\"amadou.bah@capgemini.com\",\"killersex\":\"1\",\"killerisavailable\":\"1\",\"killerpassword\":\"azerty\",\"killerisadmin\":null,\"killerstatus\":null,\"teamid\":\"1\"}', '{\"status\":1,\"id\":\"40\"}', NULL, NULL, 1, '2017-12-02 21:36:04', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'),
-(1071, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2017-12-02 21:40:35', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36');
+(1071, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2017-12-02 21:40:35', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'),
+(1072, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2018-03-21 09:24:49', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'),
+(1073, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2018-03-21 15:52:42', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'),
+(1074, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2018-03-22 10:16:42', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'),
+(1075, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2018-03-22 11:42:27', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'),
+(1076, 'LOGIN', 'LOGIN', NULL, 'directus_users', 0, 1, NULL, NULL, NULL, NULL, 0, '2018-03-22 13:08:18', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_bookmarks`
+-- Structure de la table `directus_bookmarks`
 --
 
 CREATE TABLE `directus_bookmarks` (
@@ -1432,7 +1437,7 @@ CREATE TABLE `directus_bookmarks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_bookmarks`
+-- Déchargement des données de la table `directus_bookmarks`
 --
 
 INSERT INTO `directus_bookmarks` (`id`, `user`, `title`, `url`, `section`) VALUES
@@ -1444,7 +1449,7 @@ INSERT INTO `directus_bookmarks` (`id`, `user`, `title`, `url`, `section`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_columns`
+-- Structure de la table `directus_columns`
 --
 
 CREATE TABLE `directus_columns` (
@@ -1466,7 +1471,7 @@ CREATE TABLE `directus_columns` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_columns`
+-- Déchargement des données de la table `directus_columns`
 --
 
 INSERT INTO `directus_columns` (`id`, `table_name`, `column_name`, `data_type`, `ui`, `relationship_type`, `related_table`, `junction_table`, `junction_key_left`, `junction_key_right`, `hidden_input`, `required`, `sort`, `comment`, `options`) VALUES
@@ -1547,7 +1552,7 @@ INSERT INTO `directus_columns` (`id`, `table_name`, `column_name`, `data_type`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_files`
+-- Structure de la table `directus_files`
 --
 
 CREATE TABLE `directus_files` (
@@ -1570,7 +1575,7 @@ CREATE TABLE `directus_files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_files`
+-- Déchargement des données de la table `directus_files`
 --
 
 INSERT INTO `directus_files` (`id`, `status`, `name`, `title`, `location`, `caption`, `type`, `charset`, `tags`, `width`, `height`, `size`, `embed_id`, `user`, `date_uploaded`, `storage_adapter`) VALUES
@@ -1588,7 +1593,7 @@ INSERT INTO `directus_files` (`id`, `status`, `name`, `title`, `location`, `capt
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_groups`
+-- Structure de la table `directus_groups`
 --
 
 CREATE TABLE `directus_groups` (
@@ -1600,7 +1605,7 @@ CREATE TABLE `directus_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_groups`
+-- Déchargement des données de la table `directus_groups`
 --
 
 INSERT INTO `directus_groups` (`id`, `name`, `description`, `restrict_to_ip_whitelist`, `nav_override`) VALUES
@@ -1611,7 +1616,7 @@ INSERT INTO `directus_groups` (`id`, `name`, `description`, `restrict_to_ip_whit
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_messages`
+-- Structure de la table `directus_messages`
 --
 
 CREATE TABLE `directus_messages` (
@@ -1628,7 +1633,7 @@ CREATE TABLE `directus_messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_messages_recipients`
+-- Structure de la table `directus_messages_recipients`
 --
 
 CREATE TABLE `directus_messages_recipients` (
@@ -1643,7 +1648,7 @@ CREATE TABLE `directus_messages_recipients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_preferences`
+-- Structure de la table `directus_preferences`
 --
 
 CREATE TABLE `directus_preferences` (
@@ -1660,7 +1665,7 @@ CREATE TABLE `directus_preferences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_preferences`
+-- Déchargement des données de la table `directus_preferences`
 --
 
 INSERT INTO `directus_preferences` (`id`, `user`, `table_name`, `title`, `columns_visible`, `sort`, `sort_order`, `status`, `search_string`, `list_view_options`) VALUES
@@ -1674,7 +1679,7 @@ INSERT INTO `directus_preferences` (`id`, `user`, `table_name`, `title`, `column
 (8, 1, 'directus_users', NULL, 'first_name,last_name,email,password,salt,token,access_token', 'id', 'ASC', '1,2', NULL, NULL),
 (9, 1, 'user', NULL, 'nom,email,phone', 'id', 'ASC', '1,2', NULL, NULL),
 (12, 1, 'toto', NULL, 'name,surname', 'id', 'ASC', '1,2', NULL, NULL),
-(17, 1, 'killers', NULL, 'killerlastname,killerfirstname,killersurname,killerphoto,killerstatus,killerbench,killermail,killersex,killerisavailable,killerpassword,killerisadmin,id,teamid', 'killerstatus', 'ASC', '1,2', NULL, '{\"spacing\":\"cozy\",\"item_numbers\":false,\"last_updated\":false,\"comments_count\":false,\"show_footer\":false,\"revisions_count\":false,\"currentView\":\"table\",\"table\":{\"item_numbers\":false}}'),
+(17, 1, 'killers', NULL, 'killerlastname,killerfirstname,killersurname,killerphoto,killerstatus,killerbench,killermail,killersex,killerisavailable,killerpassword,killerisadmin,id,teamid,inscriptiondate', 'id', 'ASC', '1,2', NULL, '{\"spacing\":\"cozy\",\"item_numbers\":false,\"last_updated\":false,\"comments_count\":false,\"show_footer\":false,\"revisions_count\":false,\"currentView\":\"table\",\"table\":{\"item_numbers\":false}}'),
 (18, 1, 'medals', NULL, 'medaldescription', 'sort', 'ASC', '1,2', NULL, '{\"spacing\":\"cozy\",\"item_numbers\":false,\"currentView\":\"table\",\"table\":{\"item_numbers\":false}}'),
 (19, 1, 'killermedals', NULL, 'killername,medalid,daterecieved', 'sort', 'ASC', '1,2', NULL, '{\"spacing\":\"cozy\",\"item_numbers\":false,\"currentView\":\"table\",\"table\":{\"item_numbers\":false}}'),
 (20, 1, 'places', NULL, 'placedescription,id', 'id', 'ASC', '1,2', NULL, '{\"spacing\":\"cozy\",\"item_numbers\":false,\"currentView\":\"table\",\"table\":{\"item_numbers\":false},\"last_updated\":false,\"comments_count\":false,\"show_footer\":false,\"revisions_count\":false}'),
@@ -1689,7 +1694,7 @@ INSERT INTO `directus_preferences` (`id`, `user`, `table_name`, `title`, `column
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_privileges`
+-- Structure de la table `directus_privileges`
 --
 
 CREATE TABLE `directus_privileges` (
@@ -1708,7 +1713,7 @@ CREATE TABLE `directus_privileges` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_privileges`
+-- Déchargement des données de la table `directus_privileges`
 --
 
 INSERT INTO `directus_privileges` (`id`, `table_name`, `allow_view`, `allow_add`, `allow_edit`, `allow_delete`, `allow_alter`, `group_id`, `read_field_blacklist`, `write_field_blacklist`, `nav_listed`, `status_id`) VALUES
@@ -1759,7 +1764,7 @@ INSERT INTO `directus_privileges` (`id`, `table_name`, `allow_view`, `allow_add`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_schema_migrations`
+-- Structure de la table `directus_schema_migrations`
 --
 
 CREATE TABLE `directus_schema_migrations` (
@@ -1767,7 +1772,7 @@ CREATE TABLE `directus_schema_migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `directus_schema_migrations`
+-- Déchargement des données de la table `directus_schema_migrations`
 --
 
 INSERT INTO `directus_schema_migrations` (`version`) VALUES
@@ -1787,7 +1792,7 @@ INSERT INTO `directus_schema_migrations` (`version`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_settings`
+-- Structure de la table `directus_settings`
 --
 
 CREATE TABLE `directus_settings` (
@@ -1798,7 +1803,7 @@ CREATE TABLE `directus_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_settings`
+-- Déchargement des données de la table `directus_settings`
 --
 
 INSERT INTO `directus_settings` (`id`, `collection`, `name`, `value`) VALUES
@@ -1817,7 +1822,7 @@ INSERT INTO `directus_settings` (`id`, `collection`, `name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_tables`
+-- Structure de la table `directus_tables`
 --
 
 CREATE TABLE `directus_tables` (
@@ -1841,7 +1846,7 @@ CREATE TABLE `directus_tables` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_tables`
+-- Déchargement des données de la table `directus_tables`
 --
 
 INSERT INTO `directus_tables` (`table_name`, `display_template`, `preview_url`, `hidden`, `single`, `default_status`, `footer`, `column_groupings`, `primary_column`, `sort_column`, `status_column`, `status_mapping`, `user_create_column`, `user_update_column`, `date_create_column`, `date_update_column`, `filter_column_blacklist`) VALUES
@@ -1855,7 +1860,7 @@ INSERT INTO `directus_tables` (`table_name`, `display_template`, `preview_url`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `directus_users`
+-- Structure de la table `directus_users`
 --
 
 CREATE TABLE `directus_users` (
@@ -1895,17 +1900,17 @@ CREATE TABLE `directus_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `directus_users`
+-- Déchargement des données de la table `directus_users`
 --
 
 INSERT INTO `directus_users` (`id`, `status`, `first_name`, `last_name`, `email`, `password`, `salt`, `token`, `access_token`, `reset_token`, `reset_expiration`, `position`, `email_messages`, `last_login`, `last_access`, `last_page`, `ip`, `group`, `avatar`, `avatar_file_id`, `location`, `phone`, `address`, `city`, `state`, `country`, `zip`, `language`, `timezone`, `invite_token`, `invite_date`, `invite_sender`, `invite_accepted`) VALUES
-(1, 1, 'Admin', 'User', 'thehivekiller@capgemini.com', '$2y$12$EHSmUmKNXVYokKigMowxc.hG5t8gzW4lZVVhtYcsmeAgu5rBP3xGG', 'mz6wy3uqLaYy8DEb', 'UCKY3TmBGzuSt7bdnIJA04wbeqW0Ue0h', 'acd2fb13a4adc4b9b8321d5a59a95e8964a10be0', '', NULL, '', 1, '2017-12-02 21:40:35', '2017-12-02 21:40:41', '{\"path\":\"tables/killers/61\",\"route\":\"entry\"}', '::1', 1, '//www.gravatar.com/avatar/6a22d5fe20894e310efcf107a09e4618?s=200&d=identicon&r=g', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'fr', 'America/New_York', NULL, NULL, NULL, NULL),
+(1, 1, 'Admin', 'User', 'thehivekiller@capgemini.com', '$2y$12$EHSmUmKNXVYokKigMowxc.hG5t8gzW4lZVVhtYcsmeAgu5rBP3xGG', 'mz6wy3uqLaYy8DEb', 'UCKY3TmBGzuSt7bdnIJA04wbeqW0Ue0h', '2c37859f2c6a842e6597ef6a4b9fb3aa08dc4a34', '', NULL, '', 1, '2018-03-22 13:08:18', '2018-03-22 14:49:50', '{\"path\":\"tables/killers\",\"route\":\"entries\"}', '::1', 1, '//www.gravatar.com/avatar/6a22d5fe20894e310efcf107a09e4618?s=200&d=identicon&r=g', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'fr', 'America/New_York', NULL, NULL, NULL, NULL),
 (2, 1, 'hope', 'espoir', 'espopoameg@gmail.com', '$2y$12$j1ai7UdoGV941KPOpqe5aOB3VyYPmMqI1ArlbtSgSWTeLhynrkZsW', 'PAM79anwHFoRoNNn', NULL, '', '', '2017-10-19 15:55:34', '', 1, '2017-10-19 15:55:34', '2017-10-19 15:55:34', '', '', 1, '//www.gravatar.com/avatar/8a11592b7378a9cdc3f6a59cc559690f?s=200&d=identicon&r=g', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'fr', 'America/New_York', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `killercontracts`
+-- Structure de la table `killercontracts`
 --
 
 CREATE TABLE `killercontracts` (
@@ -1922,7 +1927,7 @@ CREATE TABLE `killercontracts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `killercontracts`
+-- Déchargement des données de la table `killercontracts`
 --
 
 INSERT INTO `killercontracts` (`id`, `status`, `sort`, `killerid`, `contractid`, `handlingstartdate`, `handlingenddate`, `killervalidation`, `targetvalidation`, `killdescription`) VALUES
@@ -1951,7 +1956,7 @@ INSERT INTO `killercontracts` (`id`, `status`, `sort`, `killerid`, `contractid`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `killermedals`
+-- Structure de la table `killermedals`
 --
 
 CREATE TABLE `killermedals` (
@@ -1966,7 +1971,7 @@ CREATE TABLE `killermedals` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `killers`
+-- Structure de la table `killers`
 --
 
 CREATE TABLE `killers` (
@@ -1984,80 +1989,81 @@ CREATE TABLE `killers` (
   `killerpassword` varchar(100) DEFAULT NULL COMMENT '''''',
   `killerisadmin` char(1) DEFAULT NULL,
   `killerstatus` int(11) DEFAULT NULL,
-  `teamid` int(11) DEFAULT NULL
+  `teamid` int(11) DEFAULT NULL,
+  `inscriptiondate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `killers`
+-- Déchargement des données de la table `killers`
 --
 
-INSERT INTO `killers` (`id`, `status`, `sort`, `killerlastname`, `killerfirstname`, `killersurname`, `killerphoto`, `killerbench`, `killermail`, `killersex`, `killerisavailable`, `killerpassword`, `killerisadmin`, `killerstatus`, `teamid`) VALUES
-(1, 1, 0, 'AMEGANVI', 'Ayawo', 'hope_killer', 5, '3B-63', 'ayawo-dela-fiogbo.ameganvi@capgemini.com', '1', '1', 'espoir', NULL, 1, 1),
-(2, 0, 0, NULL, NULL, NULL, NULL, '3B45', NULL, '1', NULL, 'PFE&é\"', NULL, NULL, NULL),
-(3, 0, 0, NULL, 'ayawo', NULL, NULL, '3B-63', NULL, '1', NULL, 'PFE&é\"', NULL, NULL, NULL),
-(4, 0, 0, NULL, 'toto', 'TOTO', NULL, '3B-10', 'toto.tata@capgemini.com', '1', NULL, 'pfe', NULL, NULL, NULL),
-(5, 0, 0, 'tap', 'top', 'TOP', NULL, '3B10', 'top.tap@capgemini.com', '1', NULL, 'TOTO', NULL, NULL, NULL),
-(6, 0, 0, NULL, 'pipi', 'popo', NULL, '3DR2', 'pipi.pipi@capgemini.com', '1', NULL, 'LKFD', NULL, NULL, NULL),
-(7, 0, 0, NULL, 'titi', 'toto', NULL, '4B23', 'titi.totot@capgemini.com', '1', NULL, 'PFOD', NULL, NULL, NULL),
-(8, 0, 0, NULL, 'ayawo', 'toto', NULL, '34CD', 'ayawo.ameganvi@capgmini.com', '1', NULL, 'FDKJd', NULL, NULL, NULL),
-(9, 0, 0, NULL, 'ayawo', 'toto', NULL, '34CD', 'ayawo.ameganvi@capgmini.com', '1', NULL, 'FDKJd', NULL, NULL, NULL),
-(10, 0, 0, NULL, 'oidzocez', 'oiurt', NULL, 'vgrv', 'oidzocez.orecoice@cfdolkce.com', '1', NULL, 'kjvev', NULL, NULL, NULL),
-(11, 0, 0, NULL, 'tout', 'vfev', NULL, 'vrfv', 'tout.tou@clac.com', '1', NULL, 'lkcdsc', NULL, NULL, NULL),
-(12, 0, 0, NULL, 'ayawo', 'hope_killer', NULL, '5GVN', 'ayawo.ameganvi@gmail.com', '1', NULL, 'PFE', NULL, NULL, NULL),
-(13, 0, 0, NULL, 'TOTO', 'fds', NULL, 'kjP', 'TOTO.toto@toto.com', '1', NULL, 'KJN', NULL, NULL, NULL),
-(14, 0, 0, NULL, 'test', 'TOTO', NULL, 'bdf', 'test.test@capgemini.com', '1', NULL, 'bdf', NULL, NULL, NULL),
-(15, 0, 0, NULL, 'dsv', 'vdsv', NULL, 'kjfev', 'dsv.the@capgemini.ocm', '1', NULL, 'frlv', NULL, NULL, NULL),
-(16, 0, 0, NULL, 'toto', 'vevev', NULL, 'fjdf', 'toto.gfkj@lkds.com', '1', NULL, 'flkjd', NULL, NULL, NULL),
-(17, 0, 0, NULL, 'toto', 'vdv', NULL, 'fkjd', 'toto.toot@toto.com', '1', NULL, 'gj', NULL, NULL, NULL),
-(18, 0, 0, NULL, 'oto', 'vrev', NULL, 'flkjv', 'oto.toto@toto.com', '1', NULL, 'fvlkja', NULL, NULL, NULL),
-(19, 0, 0, NULL, 'POPO', 'SSSSSSSSSSSSSS', NULL, 'kljfd', 'POPO.popo@compahj.com', '1', NULL, 'flkj', NULL, NULL, NULL),
-(20, 0, 0, NULL, 'POPO', 'SSSSSSSSSSSSSS', NULL, 'kljfd', 'POPO.popo@compahj.com', '1', NULL, 'flkj', NULL, NULL, NULL),
-(21, 0, 0, 'TOTOTO', 'toto', 'SSSSSSSSSSSSSS', NULL, 'vlkzd', 'toto.toto@toto.com', '1', NULL, 'lvk', NULL, NULL, NULL),
-(22, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL),
-(23, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL),
-(24, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL),
-(25, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL),
-(26, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL),
-(27, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL),
-(28, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL),
-(29, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL),
-(30, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL),
-(31, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, 'kdk', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe', NULL, NULL, NULL),
-(32, 0, 0, 'ameganvi', 'ayawo', 'yopla', NULL, 'dge', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(33, 0, 0, 'ameganvi', 'ayawo', 'yopla', NULL, 'dge', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(34, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(35, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(36, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(37, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(38, 0, 0, 'toto', 'toto', 'toto', NULL, 'toto', 'toto.toto@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(39, 0, 0, 'toto', 'toto', 'toto', NULL, 'toto', 'toto.toto@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL),
-(40, 1, 0, 'Bah', 'Amadou', 'amaBah', 8, '3B10', 'amadou.bah@capgemini.com', '1', '1', 'azerty', NULL, NULL, 1),
-(41, 1, 0, 'toto', 'toto', 'ccec', 9, 'cec', 'toto.toto@capgemini.com', '1', '1', 'espace', NULL, NULL, 1),
-(42, 0, 0, 'diop', 'adama', 'numba', NULL, '3B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, NULL),
-(43, 0, 0, 'ada', 'diop', 'numba', NULL, 'ds', 'diop.ada@capgemini.com', '0', NULL, 'adama', NULL, NULL, NULL),
-(44, 0, 0, 'mdp', 'ada', 'numba', NULL, 'ddddd', 'ada.mdp@capgemini.com', '1', NULL, 'espace', NULL, NULL, 0),
-(45, 0, 0, 'amedddganvi', 'ayawo-dela-fiogbo', 'nn', NULL, 'ss', 'ayawo-dela-fiogbo.amedddganvi@capgemini.com', '1', NULL, 'espace', NULL, NULL, 0),
-(46, 0, 0, 'aa', 'aa', 'zzz', NULL, 'zzzzz', 'aa.aa@capgemini.com', '1', NULL, 'zzzzzz', NULL, NULL, 0),
-(47, 0, 0, 'diop', 'adssama', 'aaaaaa', NULL, 'aaaaa', 'adssama.diop@capgemini.com', '1', NULL, 'aaaaaa', NULL, NULL, 2),
-(48, 0, 0, 'bah', 'amadou', 'aaaa', NULL, 'aaaaa', 'amadou.bah@capgemini.com', '1', NULL, 'aaaaaa', NULL, NULL, 2),
-(49, 0, 0, 'disop', '	adama', 'aaa', NULL, 'ssss', '	adama.disop@capgemini.com', '1', NULL, 'ssssss', NULL, NULL, 2),
-(50, 0, 0, NULL, '', '', 14, '', '', '1', NULL, '', NULL, NULL, 0),
-(51, 0, 0, NULL, '', '', 15, '', '', '1', NULL, '', NULL, NULL, 0),
-(52, 0, 0, NULL, '', '', 16, '', '', '1', NULL, '', NULL, NULL, 0),
-(53, 0, 0, NULL, '', '', 17, '', '', '1', NULL, '', NULL, NULL, 0),
-(54, 0, 0, NULL, '', '', 18, '', '', '1', NULL, '', NULL, NULL, 0),
-(55, 0, 0, 'diop', 'adama', 'Numba', 19, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2),
-(56, 0, 0, 'diop', 'adama', 'Numba', 19, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2),
-(57, 0, 0, 'diop', 'adama', 'numbad', 20, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2),
-(58, 0, 0, 'diop', 'adama', 'numbad', 21, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 1),
-(59, 0, 0, 'diop', 'adama', 'numbad', 22, '9b-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, 1, 1),
-(60, 0, 0, 'diop', 'adama', 'numbad', 23, '9B-93', 'adama.diop@capgemini.com', '1', '1', 'espace', NULL, 1, 2),
-(61, 1, 0, 'diop', 'adama', 'numbad', 24, '9B-93', 'adama.diop@capgemini.com', '1', '1', 'espace', NULL, 1, 1);
+INSERT INTO `killers` (`id`, `status`, `sort`, `killerlastname`, `killerfirstname`, `killersurname`, `killerphoto`, `killerbench`, `killermail`, `killersex`, `killerisavailable`, `killerpassword`, `killerisadmin`, `killerstatus`, `teamid`, `inscriptiondate`) VALUES
+(1, 1, 0, 'AMEGANVI', 'Ayawo', 'hope_killer', 5, '3B-63', 'ayawo-dela-fiogbo.ameganvi@capgemini.com', '1', '1', 'espoir', NULL, 1, 1, '2018-03-22 15:21:39'),
+(2, 0, 0, NULL, NULL, NULL, NULL, '3B45', NULL, '1', NULL, 'PFE&é\"', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(3, 0, 0, NULL, 'ayawo', NULL, NULL, '3B-63', NULL, '1', NULL, 'PFE&é\"', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(4, 0, 0, NULL, 'toto', 'TOTO', NULL, '3B-10', 'toto.tata@capgemini.com', '1', NULL, 'pfe', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(5, 0, 0, 'tap', 'top', 'TOP', NULL, '3B10', 'top.tap@capgemini.com', '1', NULL, 'TOTO', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(6, 0, 0, NULL, 'pipi', 'popo', NULL, '3DR2', 'pipi.pipi@capgemini.com', '1', NULL, 'LKFD', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(7, 0, 0, NULL, 'titi', 'toto', NULL, '4B23', 'titi.totot@capgemini.com', '1', NULL, 'PFOD', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(8, 0, 0, NULL, 'ayawo', 'toto', NULL, '34CD', 'ayawo.ameganvi@capgmini.com', '1', NULL, 'FDKJd', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(9, 0, 0, NULL, 'ayawo', 'toto', NULL, '34CD', 'ayawo.ameganvi@capgmini.com', '1', NULL, 'FDKJd', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(10, 0, 0, NULL, 'oidzocez', 'oiurt', NULL, 'vgrv', 'oidzocez.orecoice@cfdolkce.com', '1', NULL, 'kjvev', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(11, 0, 0, NULL, 'tout', 'vfev', NULL, 'vrfv', 'tout.tou@clac.com', '1', NULL, 'lkcdsc', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(12, 0, 0, NULL, 'ayawo', 'hope_killer', NULL, '5GVN', 'ayawo.ameganvi@gmail.com', '1', NULL, 'PFE', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(13, 0, 0, NULL, 'TOTO', 'fds', NULL, 'kjP', 'TOTO.toto@toto.com', '1', NULL, 'KJN', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(14, 0, 0, NULL, 'test', 'TOTO', NULL, 'bdf', 'test.test@capgemini.com', '1', NULL, 'bdf', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(15, 0, 0, NULL, 'dsv', 'vdsv', NULL, 'kjfev', 'dsv.the@capgemini.ocm', '1', NULL, 'frlv', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(16, 0, 0, NULL, 'toto', 'vevev', NULL, 'fjdf', 'toto.gfkj@lkds.com', '1', NULL, 'flkjd', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(17, 0, 0, NULL, 'toto', 'vdv', NULL, 'fkjd', 'toto.toot@toto.com', '1', NULL, 'gj', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(18, 0, 0, NULL, 'oto', 'vrev', NULL, 'flkjv', 'oto.toto@toto.com', '1', NULL, 'fvlkja', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(19, 0, 0, NULL, 'POPO', 'SSSSSSSSSSSSSS', NULL, 'kljfd', 'POPO.popo@compahj.com', '1', NULL, 'flkj', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(20, 0, 0, NULL, 'POPO', 'SSSSSSSSSSSSSS', NULL, 'kljfd', 'POPO.popo@compahj.com', '1', NULL, 'flkj', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(21, 0, 0, 'TOTOTO', 'toto', 'SSSSSSSSSSSSSS', NULL, 'vlkzd', 'toto.toto@toto.com', '1', NULL, 'lvk', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(22, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(23, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(24, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(25, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(26, 0, 0, 'TOTOTO', '', 'SSSSSSSSSSSSSS', NULL, '', '', '1', NULL, '', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(27, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(28, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(29, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(30, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, '3B-45', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe123', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(31, 0, 0, 'TOTOTO', 'ayawo', 'SSSSSSSSSSSSSS', NULL, 'kdk', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'pfe', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(32, 0, 0, 'ameganvi', 'ayawo', 'yopla', NULL, 'dge', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(33, 0, 0, 'ameganvi', 'ayawo', 'yopla', NULL, 'dge', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(34, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(35, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(36, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(37, 0, 0, 'ameganvi', 'ayawo', 'babtou', NULL, '3B15', 'ayawo.ameganvi@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(38, 0, 0, 'toto', 'toto', 'toto', NULL, 'toto', 'toto.toto@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(39, 0, 0, 'toto', 'toto', 'toto', NULL, 'toto', 'toto.toto@capgemini.com', '1', NULL, 'toto', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(40, 1, 0, 'Bah', 'Amadou', 'amaBah', 8, '3B10', 'amadou.bah@capgemini.com', '1', '1', 'azerty', NULL, NULL, 1, '2018-03-22 15:21:39'),
+(41, 1, 0, 'toto', 'toto', 'ccec', 9, 'cec', 'toto.toto@capgemini.com', '1', '1', 'espace', NULL, NULL, 1, '2018-03-22 15:21:39'),
+(42, 0, 0, 'diop', 'adama', 'numba', NULL, '3B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(43, 0, 0, 'ada', 'diop', 'numba', NULL, 'ds', 'diop.ada@capgemini.com', '0', NULL, 'adama', NULL, NULL, NULL, '2018-03-22 15:21:39'),
+(44, 0, 0, 'mdp', 'ada', 'numba', NULL, 'ddddd', 'ada.mdp@capgemini.com', '1', NULL, 'espace', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(45, 0, 0, 'amedddganvi', 'ayawo-dela-fiogbo', 'nn', NULL, 'ss', 'ayawo-dela-fiogbo.amedddganvi@capgemini.com', '1', NULL, 'espace', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(46, 0, 0, 'aa', 'aa', 'zzz', NULL, 'zzzzz', 'aa.aa@capgemini.com', '1', NULL, 'zzzzzz', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(47, 0, 0, 'diop', 'adssama', 'aaaaaa', NULL, 'aaaaa', 'adssama.diop@capgemini.com', '1', NULL, 'aaaaaa', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(48, 0, 0, 'bah', 'amadou', 'aaaa', NULL, 'aaaaa', 'amadou.bah@capgemini.com', '1', NULL, 'aaaaaa', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(49, 0, 0, 'disop', '	adama', 'aaa', NULL, 'ssss', '	adama.disop@capgemini.com', '1', NULL, 'ssssss', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(50, 0, 0, NULL, '', '', 14, '', '', '1', NULL, '', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(51, 0, 0, NULL, '', '', 15, '', '', '1', NULL, '', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(52, 0, 0, NULL, '', '', 16, '', '', '1', NULL, '', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(53, 0, 0, NULL, '', '', 17, '', '', '1', NULL, '', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(54, 0, 0, NULL, '', '', 18, '', '', '1', NULL, '', NULL, NULL, 0, '2018-03-22 15:21:39'),
+(55, 0, 0, 'diop', 'adama', 'Numba', 19, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(56, 0, 0, 'diop', 'adama', 'Numba', 19, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(57, 0, 0, 'diop', 'adama', 'numbad', 20, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 2, '2018-03-22 15:21:39'),
+(58, 0, 0, 'diop', 'adama', 'numbad', 21, '9B-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, NULL, 1, '2018-03-22 15:21:39'),
+(59, 0, 0, 'diop', 'adama', 'numbad', 22, '9b-93', 'adama.diop@capgemini.com', '1', NULL, 'espace', NULL, 1, 1, '2018-03-22 15:21:39'),
+(60, 0, 0, 'diop', 'adama', 'numbad', 23, '9B-93', 'adama.diop@capgemini.com', '1', '1', 'espace', NULL, 1, 2, '2018-03-22 15:21:39'),
+(61, 1, 0, 'diop', 'adama', 'numbad', 24, '9B-93', 'adama.diop@capgemini.com', '1', '1', 'espace', NULL, 1, 1, '2018-03-22 15:21:39');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medals`
+-- Structure de la table `medals`
 --
 
 CREATE TABLE `medals` (
@@ -2070,7 +2076,7 @@ CREATE TABLE `medals` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `places`
+-- Structure de la table `places`
 --
 
 CREATE TABLE `places` (
@@ -2081,7 +2087,7 @@ CREATE TABLE `places` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `places`
+-- Déchargement des données de la table `places`
 --
 
 INSERT INTO `places` (`id`, `status`, `sort`, `placedescription`) VALUES
@@ -2091,7 +2097,7 @@ INSERT INTO `places` (`id`, `status`, `sort`, `placedescription`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status`
+-- Structure de la table `status`
 --
 
 CREATE TABLE `status` (
@@ -2102,7 +2108,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `status`
+-- Déchargement des données de la table `status`
 --
 
 INSERT INTO `status` (`id`, `status`, `sort`, `statusdescription`) VALUES
@@ -2113,7 +2119,7 @@ INSERT INTO `status` (`id`, `status`, `sort`, `statusdescription`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team`
+-- Structure de la table `team`
 --
 
 CREATE TABLE `team` (
@@ -2124,7 +2130,7 @@ CREATE TABLE `team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `team`
+-- Déchargement des données de la table `team`
 --
 
 INSERT INTO `team` (`id`, `status`, `sort`, `teamname`) VALUES
@@ -2134,7 +2140,7 @@ INSERT INTO `team` (`id`, `status`, `sort`, `teamname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tool`
+-- Structure de la table `tool`
 --
 
 CREATE TABLE `tool` (
@@ -2146,7 +2152,7 @@ CREATE TABLE `tool` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tool`
+-- Déchargement des données de la table `tool`
 --
 
 INSERT INTO `tool` (`id`, `status`, `sort`, `toolname`, `toolimage`) VALUES
@@ -2156,7 +2162,7 @@ INSERT INTO `tool` (`id`, `status`, `sort`, `toolname`, `toolimage`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tooldescription`
+-- Structure de la table `tooldescription`
 --
 
 CREATE TABLE `tooldescription` (
@@ -2168,7 +2174,7 @@ CREATE TABLE `tooldescription` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tooldescription`
+-- Déchargement des données de la table `tooldescription`
 --
 
 INSERT INTO `tooldescription` (`id`, `status`, `sort`, `toolusage`, `toolid`) VALUES
@@ -2176,67 +2182,67 @@ INSERT INTO `tooldescription` (`id`, `status`, `sort`, `toolusage`, `toolid`) VA
 (2, 1, 0, 'Lui mettre sur la tête et le prendre en photo', 2);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `actions`
+-- Index pour la table `actions`
 --
 ALTER TABLE `actions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contracts`
+-- Index pour la table `contracts`
 --
 ALTER TABLE `contracts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_activity`
+-- Index pour la table `directus_activity`
 --
 ALTER TABLE `directus_activity`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_bookmarks`
+-- Index pour la table `directus_bookmarks`
 --
 ALTER TABLE `directus_bookmarks`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_columns`
+-- Index pour la table `directus_columns`
 --
 ALTER TABLE `directus_columns`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `table-column` (`table_name`,`column_name`);
 
 --
--- Indexes for table `directus_files`
+-- Index pour la table `directus_files`
 --
 ALTER TABLE `directus_files`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_groups`
+-- Index pour la table `directus_groups`
 --
 ALTER TABLE `directus_groups`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `directus_users_name_unique` (`name`);
 
 --
--- Indexes for table `directus_messages`
+-- Index pour la table `directus_messages`
 --
 ALTER TABLE `directus_messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_messages_recipients`
+-- Index pour la table `directus_messages_recipients`
 --
 ALTER TABLE `directus_messages_recipients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_preferences`
+-- Index pour la table `directus_preferences`
 --
 ALTER TABLE `directus_preferences`
   ADD PRIMARY KEY (`id`),
@@ -2244,32 +2250,32 @@ ALTER TABLE `directus_preferences`
   ADD UNIQUE KEY `pref_title_constraint` (`user`,`table_name`,`title`);
 
 --
--- Indexes for table `directus_privileges`
+-- Index pour la table `directus_privileges`
 --
 ALTER TABLE `directus_privileges`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `directus_schema_migrations`
+-- Index pour la table `directus_schema_migrations`
 --
 ALTER TABLE `directus_schema_migrations`
   ADD UNIQUE KEY `idx_directus_schema_migrations_version` (`version`);
 
 --
--- Indexes for table `directus_settings`
+-- Index pour la table `directus_settings`
 --
 ALTER TABLE `directus_settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Unique Collection and Name` (`collection`,`name`);
 
 --
--- Indexes for table `directus_tables`
+-- Index pour la table `directus_tables`
 --
 ALTER TABLE `directus_tables`
   ADD PRIMARY KEY (`table_name`);
 
 --
--- Indexes for table `directus_users`
+-- Index pour la table `directus_users`
 --
 ALTER TABLE `directus_users`
   ADD PRIMARY KEY (`id`),
@@ -2277,191 +2283,191 @@ ALTER TABLE `directus_users`
   ADD UNIQUE KEY `directus_users_token_unique` (`token`);
 
 --
--- Indexes for table `killercontracts`
+-- Index pour la table `killercontracts`
 --
 ALTER TABLE `killercontracts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `killermedals`
+-- Index pour la table `killermedals`
 --
 ALTER TABLE `killermedals`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `killers`
+-- Index pour la table `killers`
 --
 ALTER TABLE `killers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `medals`
+-- Index pour la table `medals`
 --
 ALTER TABLE `medals`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `places`
+-- Index pour la table `places`
 --
 ALTER TABLE `places`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status`
+-- Index pour la table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `team`
+-- Index pour la table `team`
 --
 ALTER TABLE `team`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tool`
+-- Index pour la table `tool`
 --
 ALTER TABLE `tool`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tooldescription`
+-- Index pour la table `tooldescription`
 --
 ALTER TABLE `tooldescription`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `actions`
+-- AUTO_INCREMENT pour la table `actions`
 --
 ALTER TABLE `actions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `contracts`
+-- AUTO_INCREMENT pour la table `contracts`
 --
 ALTER TABLE `contracts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 
 --
--- AUTO_INCREMENT for table `directus_activity`
+-- AUTO_INCREMENT pour la table `directus_activity`
 --
 ALTER TABLE `directus_activity`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1072;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1077;
 
 --
--- AUTO_INCREMENT for table `directus_bookmarks`
+-- AUTO_INCREMENT pour la table `directus_bookmarks`
 --
 ALTER TABLE `directus_bookmarks`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `directus_columns`
+-- AUTO_INCREMENT pour la table `directus_columns`
 --
 ALTER TABLE `directus_columns`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
--- AUTO_INCREMENT for table `directus_files`
+-- AUTO_INCREMENT pour la table `directus_files`
 --
 ALTER TABLE `directus_files`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `directus_groups`
+-- AUTO_INCREMENT pour la table `directus_groups`
 --
 ALTER TABLE `directus_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `directus_messages`
+-- AUTO_INCREMENT pour la table `directus_messages`
 --
 ALTER TABLE `directus_messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `directus_messages_recipients`
+-- AUTO_INCREMENT pour la table `directus_messages_recipients`
 --
 ALTER TABLE `directus_messages_recipients`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `directus_preferences`
+-- AUTO_INCREMENT pour la table `directus_preferences`
 --
 ALTER TABLE `directus_preferences`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `directus_privileges`
+-- AUTO_INCREMENT pour la table `directus_privileges`
 --
 ALTER TABLE `directus_privileges`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT for table `directus_settings`
+-- AUTO_INCREMENT pour la table `directus_settings`
 --
 ALTER TABLE `directus_settings`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `directus_users`
+-- AUTO_INCREMENT pour la table `directus_users`
 --
 ALTER TABLE `directus_users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `killercontracts`
+-- AUTO_INCREMENT pour la table `killercontracts`
 --
 ALTER TABLE `killercontracts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `killermedals`
+-- AUTO_INCREMENT pour la table `killermedals`
 --
 ALTER TABLE `killermedals`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `killers`
+-- AUTO_INCREMENT pour la table `killers`
 --
 ALTER TABLE `killers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
--- AUTO_INCREMENT for table `medals`
+-- AUTO_INCREMENT pour la table `medals`
 --
 ALTER TABLE `medals`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `places`
+-- AUTO_INCREMENT pour la table `places`
 --
 ALTER TABLE `places`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `status`
+-- AUTO_INCREMENT pour la table `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `team`
+-- AUTO_INCREMENT pour la table `team`
 --
 ALTER TABLE `team`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tool`
+-- AUTO_INCREMENT pour la table `tool`
 --
 ALTER TABLE `tool`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tooldescription`
+-- AUTO_INCREMENT pour la table `tooldescription`
 --
 ALTER TABLE `tooldescription`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
