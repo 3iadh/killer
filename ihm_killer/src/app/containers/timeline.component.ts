@@ -14,6 +14,8 @@ import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty
 
 export class TimelineComponent implements OnInit {
   
+  isConnected: boolean;
+  
   private killers;
   private contracts;
 
@@ -25,6 +27,7 @@ export class TimelineComponent implements OnInit {
   private endKillsSmallScreen;
   private showDiv;
   private showSecondDivKills;
+  
 
   constructor(
     private contractService:ContractService,
@@ -46,6 +49,7 @@ export class TimelineComponent implements OnInit {
 
   public innerWidth: any;
   ngOnInit(): void {
+    this.isConnected = true;
     this.innerWidth = window.innerWidth;
     this.contractService.getKillers().then(res => {
       this.killers = res.data;
