@@ -55,10 +55,11 @@ export class UserService {
             'killermail': killer.email,
             'killersex': killer.sex,
             'killerpassword': killer.password,
-            'killerisavailable': true,
+            'killerisavailable': 1,
             'teamid': killer.team,
             'killerphoto': killer.photo,
-            'killerstatus': 1  //Par défaut un nouveau utilsateur est diponible pour jouer 
+            'killerstatus': 1,  //Par défaut un nouveau utilsateur est diponible pour jouer
+            'sort': 0
             
         })
     }
