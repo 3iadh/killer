@@ -46,8 +46,9 @@ export class MenuComponent {
   gotoTimeline() {
     this.router.navigate(['/timeline']);
   }
-  gotoDashboard() {
 
+  gotoDashboard() {
+    this.router.navigate(['/accueil']);
   }
 
   gotoMyProfile() {
