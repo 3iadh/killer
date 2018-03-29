@@ -1,0 +1,17 @@
+ERROR - 2017-11-13T10:11:25-05:00 - Directus\Database\Exception\TableNotFoundException: Impossible de trouver la table [[object Object]] in C:\xampp\htdocs\killer\api\core\Directus\Database\SchemaManager.php:178
+Stack trace:
+#0 C:\xampp\htdocs\killer\api\core\Directus\Database\TableSchema.php(185): Directus\Database\SchemaManager->getTableSchema('[object Object]', Array, false)
+#1 C:\xampp\htdocs\killer\api\core\Directus\Database\TableGateway\BaseTableGateway.php(185): Directus\Database\TableSchema::getTableSchema('[object Object]', Array, false, false)
+#2 C:\xampp\htdocs\killer\api\core\Directus\Database\TableGateway\BaseTableGateway.php(105): Directus\Database\TableGateway\BaseTableGateway->getTableSchema()
+#3 C:\xampp\htdocs\killer\api\routes\A1\Entries.php(24): Directus\Database\TableGateway\BaseTableGateway->__construct('[object Object]', Object(Directus\Database\Connection), Object(Directus\Permissions\Acl))
+#4 [internal function]: Directus\API\Routes\A1\Entries->rows('[object Object]')
+#5 C:\xampp\htdocs\killer\vendor\slim\slim\Slim\Route.php(468): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\killer\vendor\slim\slim\Slim\Slim.php(1357): Slim\Route->dispatch()
+#7 C:\xampp\htdocs\killer\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#8 C:\xampp\htdocs\killer\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 C:\xampp\htdocs\killer\api\core\Directus\Slim\CorsMiddleware.php(24): Slim\Middleware\MethodOverride->call()
+#10 C:\xampp\htdocs\killer\api\core\Directus\Slim\CacheMiddleware.php(18): Directus\Slim\CorsMiddleware->call()
+#11 C:\xampp\htdocs\killer\vendor\slim\slim\Slim\Slim.php(1302): Directus\Slim\CacheMiddleware->call()
+#12 C:\xampp\htdocs\killer\api\core\Directus\Application\Application.php(103): Slim\Slim->run()
+#13 C:\xampp\htdocs\killer\api\api.php(527): Directus\Application\Application->run()
+#14 {main}

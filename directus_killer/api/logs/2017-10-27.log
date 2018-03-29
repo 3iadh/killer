@@ -1,0 +1,8 @@
+ERROR - 2017-10-27T12:24:54-04:00 - ErrorException: Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\killer\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 [internal function]: Directus\Exception\ExceptionHandler->handleShutdown()
+#1 {main}
+ERROR - 2017-10-27T12:40:23-04:00 - ErrorException: Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\killer\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 [internal function]: Directus\Exception\ExceptionHandler->handleShutdown()
+#1 {main}
